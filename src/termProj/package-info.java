@@ -1,7 +1,7 @@
 /**
  * A collection of luck-testing and fortune-telling games. <p>
  * Made as a class project for CIS 351, section 02.
- * @author Natasha Speck
+ * @author Bridget Bieniek, Madison Brooks, Natasha Speck
  * @version 1.3, 2017/02/16
  */
 package termProj;
