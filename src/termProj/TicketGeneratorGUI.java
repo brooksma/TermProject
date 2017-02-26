@@ -95,7 +95,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	
 	public void actionPerformed(ActionEvent event) {
         Button buttonPressed = (Button) event.getSource();
-        int complete = 2;
+        //int complete = 2;
         if(buttonPressed == twoButton)
         	output.setText(globalTckt.luckyShot());
         else if(buttonPressed == threeButton)
