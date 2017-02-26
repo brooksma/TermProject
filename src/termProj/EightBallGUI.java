@@ -18,7 +18,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	
 	JPanel eightBallPane = new JPanel(new GridBagLayout());
 	
-	ImageIcon eightBallImage = new ImageIcon(getClass().getResource("/images/8_ball_thumb.png"));
+	ImageIcon eightBallImage = new ImageIcon(getClass().getResource("8_ball_thumb.png"));
 	JLabel imageLabel = new JLabel(eightBallImage);
 	
 	Button shakeButton = new Button("Shake");
