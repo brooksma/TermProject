@@ -18,8 +18,10 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	
 	JPanel eightBallPane = new JPanel(new GridBagLayout());
 	
-	ImageIcon eightBallImage = new ImageIcon(getClass().getResource("8_ball_thumb.png"));
+	ImageIcon eightBallImage = new ImageIcon(getClass().getResource("eight_ball.jpg"));
+	ImageIcon eightBallImage2 = new ImageIcon(getClass().getResource("shaken_eight_ball.jpg"));
 	JLabel imageLabel = new JLabel(eightBallImage);
+	JLabel imageLabel2 = new JLabel(eightBallImage2);
 	
 	Button shakeButton = new Button("Shake");
 	Button retryButton = new Button("Try Again");
@@ -40,6 +42,9 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		constraints.fill = GridBagConstraints.BOTH;
 		constraints.anchor = GridBagConstraints.PAGE_START;
 		eightBallPane.add(imageLabel, constraints);	
+		
+		eightBallPane.add(imageLabel2, constraints);
+		imageLabel2.setVisible(false);
 		
 		GridBagConstraints constraints1 = new GridBagConstraints();
 		constraints1.gridx = 1;
@@ -84,7 +89,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		input.setEditable(true);
 		
 		eightBallFrame.add(eightBallPane);
-		eightBallFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		eightBallFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         eightBallFrame.pack();
         eightBallFrame.setVisible(true);
 	}
@@ -93,7 +98,9 @@ public class EightBallGUI extends JFrame implements ActionListener {
         Button buttonPressed = (Button) event.getSource();
         if(buttonPressed == shakeButton) {
         	int start = globalBall.luckyCounter;
-        	output.setText("'" + input.getText() + "'" + " " + globalBall.shakeBall());
+        	output.setText("'" + input.getText() + "'" + " " + globalBall.shakeBall());		
+        	imageLabel.setVisible(false);
+        	imageLabel2.setVisible(true);
         	if(start == globalBall.luckyCounter)
         		retryButton.setEnabled(true);
         	else {
@@ -104,6 +111,8 @@ public class EightBallGUI extends JFrame implements ActionListener {
         else if(buttonPressed == retryButton) {
         	output.setText(input.getText() + " " + globalBall.shakeBall());
         	retryButton.setEnabled(false);
+        	imageLabel.setVisible(true);
+        	imageLabel2.setVisible(false);
         }
     }
 

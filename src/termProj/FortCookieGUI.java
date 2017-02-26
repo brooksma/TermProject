@@ -51,7 +51,7 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 		output.setEditable(false);
 			
 		cookieFrame.add(cookiePanel);
-		cookieFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		cookieFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	    cookieFrame.pack();
 	    cookieFrame.setVisible(true);
 	}

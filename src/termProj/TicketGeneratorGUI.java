@@ -88,7 +88,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		gen2Button.setEnabled(false);
 		
 		tcktFrame.add(tcktPane);
-		tcktFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tcktFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         tcktFrame.pack();
         tcktFrame.setVisible(true);
 	}
