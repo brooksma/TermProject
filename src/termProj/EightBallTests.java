@@ -13,14 +13,6 @@ public class EightBallTests {
 	}
 
 	@Test
-	public final void testResetLuck() {
-		EightBall luckTest = new EightBall();
-		luckTest.shakeBall();
-		luckTest.resetLuck();
-		assertEquals("Luck did not reset." , luckTest.luckyCounter, 0);
-	}
-
-	@Test
 	public final void testShakeBall() {
 		EightBall shaken = new EightBall();
 		String response = null;
