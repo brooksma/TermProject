@@ -14,11 +14,9 @@ import java.util.Random;
  * luckyCounter: public, an <code>int</code> holding how much luck the user has encountered
  * <p><b>Methods:</b> <p>
  * <code>EightBall()</code>: constructor <p>
- * <code>reset()</code>: resets the <code>EightBall</code> object <p>
- * <code>resetLuck()</code>: resets the <code>luckyCounter</code> <p>
  * <code>shakeBall()</code>: sets the ball's response and updates the <code>luckyCounter</code>
  * @author Natasha Speck
- * @version 1.3, 2017/02/15
+ * @version 1.4, 2017/02/26
  */
 public class EightBall {
 	
@@ -41,18 +39,6 @@ public class EightBall {
 		this.ball = null;
 		this.randomNumber = new Random();
 		this.luckyCounter = 0;
-	}
-	
-	
-	/**
-	 * Resets the luck counter for the <code>EightBall</code>, without resetting the
-	 * current <code>EightBall</code> itself.
-	 * <p>
-	 * For use when a user does not intend to
-	 * calculate overall luck and closes the Magic 8-Ball.
-	 */
-	public void resetLuck() {
-		luckyCounter = 0;
 	}
 	
 	/**
@@ -85,5 +71,4 @@ public class EightBall {
 		String response = toShake.shakeBall();
 		return response;
 	}
-
 }
