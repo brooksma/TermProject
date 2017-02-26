@@ -26,7 +26,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	TextField output = new TextField("Please select an option.");
 	
 	/**
-	 * Sets up a Graphics User Interface for the basic Eight Ball module.
+	 * Sets up a Graphics User Interface for the basic Ticket Generator module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
 	 */
 	public TicketGeneratorGUI() {
