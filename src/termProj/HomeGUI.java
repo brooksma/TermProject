@@ -8,11 +8,19 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class HomeGUI  extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	
+	JMenuBar menuBar = new JMenuBar();
+	JMenuItem red, green, blue;
+	
 	JFrame homeFrame = new JFrame("Test Your Luck");
 	JPanel homePanel = new JPanel(new GridLayout(1,2));
 	
@@ -23,11 +31,25 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	
 	TextField output = new TextField("Welcome! Please select an option.");
 	
+		
 	/**
 	 * Sets up a Graphics User Interface for the basic Ticket Generator module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
 	 */
 	public HomeGUI() {
+		
+		setJMenuBar(menuBar);
+	    JMenu colorMenu = new JMenu("Color");
+	    red = colorMenu.add("Red");
+	    green = colorMenu.add("Green");
+	    blue = colorMenu.add("Blue");
+	    ButtonGroup choice = new ButtonGroup();
+	    choice.add(red);
+	    choice.add(green);
+	    choice.add(blue);
+	    menuBar.add(colorMenu); 
+	    menuBar.setVisible(true);
+	    
 		/* Welcome Message to the user*/
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.weighty = 2;
@@ -78,6 +100,7 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		homeFrame.add(homePanel);
 		homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         homeFrame.pack();
+        homeFrame.setBounds(50, 50, 1000, 200);
         homeFrame.setVisible(true);
 	}
 	
