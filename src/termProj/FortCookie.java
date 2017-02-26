@@ -53,4 +53,10 @@ public class FortCookie {
 		String phrase = broke.breakCookie();
 		return phrase;
 	}
+	
+	//main method
+	public static void main(String[] args) {
+		FortCookie fort = new FortCookie();
+		System.out.print(breakCookie(fort));
+    	}
 }
