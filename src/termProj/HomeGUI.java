@@ -84,14 +84,17 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Button buttonPressed = (Button) e.getSource();
-		//if (buttonPressed == ball)
-			//EightBallGUI newball = new EightBallGUI();
+		EightBallGUI newball;
+		FortCookieGUI newCookie;
+		TicketGeneratorGUI newLotto;
+		if (buttonPressed == ball)
+			newball = new EightBallGUI();
 		//if (buttonPressed == dice)
 			// to do
-		//if (buttonPressed == fortune)
-			//FortCookieGUI newCookie = new FortCookieGUI();
-		//if (buttonPressed == numbers)
-			//TicketGeneratorGUI newLotto = new TicketGeneratorGUI();
+		if (buttonPressed == fortune)
+			newCookie = new FortCookieGUI();
+		if (buttonPressed == numbers)
+			newLotto = new TicketGeneratorGUI();
 	}
 	
 	public static void main(String[] args){
