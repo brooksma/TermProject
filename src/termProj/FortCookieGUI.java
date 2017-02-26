@@ -25,19 +25,17 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.gridx = 1;
 		constraints.gridy = 0;
-		constraints.weighty = 0.5;
-		constraints.weightx = 0.5;
+		constraints.weighty = 1.0;
+		constraints.weightx = 1.0;
 		constraints.fill = GridBagConstraints.BOTH;
 		constraints.anchor = GridBagConstraints.PAGE_START;
 		cookiePanel.add(imageLabel, constraints);	
 			
 		GridBagConstraints constraints1 = new GridBagConstraints();
 		constraints1.gridx = 1;
-		constraints1.gridy = 1;
-		constraints1.weighty = 0.5;
-		constraints1.weightx = 0.5;
-		constraints1.gridwidth = 1;
-		constraints1.gridheight = 1;
+		constraints1.gridy = 1;	
+		constraints1.weighty = 1.0;
+		constraints1.weightx = 1.0;
 		cookiePanel.add(breakButton, constraints1);
 		breakButton.addActionListener(this);
 		breakButton.setEnabled(true);
@@ -45,8 +43,8 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 		GridBagConstraints constraints2 = new GridBagConstraints();
 		constraints2.gridx = 1;
 		constraints2.gridy = 2;
-		constraints2.weighty = 0.5;
-		constraints2.weightx = 0.5;
+		constraints2.weighty = 1.0;
+		constraints2.weightx = 1.0;
 		constraints2.fill = GridBagConstraints.HORIZONTAL;
 		constraints2.anchor = GridBagConstraints.CENTER;
 		cookiePanel.add(output, constraints2);
