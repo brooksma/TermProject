@@ -1,24 +1,14 @@
 package termProj;
 
-import java.awt.Button;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class HomeGUI  extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	JMenuBar menuBar = new JMenuBar();
+	JMenu personalize;
 	JMenuItem red, green, blue;
 	
 	JFrame homeFrame = new JFrame("Test Your Luck");
@@ -38,16 +28,33 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	 */
 	public HomeGUI() {
 		
-		setJMenuBar(menuBar);
-	    JMenu colorMenu = new JMenu("Color");
-	    red = colorMenu.add("Red");
-	    green = colorMenu.add("Green");
-	    blue = colorMenu.add("Blue");
-	    ButtonGroup choice = new ButtonGroup();
-	    choice.add(red);
-	    choice.add(green);
-	    choice.add(blue);
-	    menuBar.add(colorMenu); 
+		//Set up the Personalize menu
+	    personalize = new JMenu("Personalize");
+	    personalize.setMnemonic(KeyEvent.VK_A);
+	    personalize.getAccessibleContext().setAccessibleDescription("Personalize the homepage!");
+	    
+	    //Set up the colour options
+	    red = new JMenuItem("Red", KeyEvent.VK_T);
+	    red.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+	    red.getAccessibleContext().setAccessibleDescription("Turn the background red.");
+	    red.addActionListener(this);
+	    personalize.add(red);
+	    
+	    green = new JMenuItem("Red", KeyEvent.VK_T);
+	    green.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+	    green.getAccessibleContext().setAccessibleDescription("Turn the background green.");
+	    green.addActionListener(this);
+	    personalize.add(green);
+	    
+	    blue = new JMenuItem("Red", KeyEvent.VK_T);
+	    blue.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
+	    blue.getAccessibleContext().setAccessibleDescription("Turn the background blue.");
+	    blue.addActionListener(this);
+	    personalize.add(blue);
+	    
+	    //Complete the Menu
+	    menuBar.add(personalize); 
+	    homeFrame.setJMenuBar(menuBar);
 	    menuBar.setVisible(true);
 	    
 		/* Welcome Message to the user*/
@@ -110,13 +117,20 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		EightBallGUI newball;
 		FortCookieGUI newCookie;
 		TicketGeneratorGUI newLotto;
-		if (buttonPressed == ball)
+		//DiceGUI newDie;
+		if (e.getSource() == red)
+			homePanel.setBackground(Color.RED);
+		else if(e.getSource() == green)
+			homePanel.setBackground(Color.GREEN);
+		else if(e.getSource() == blue)
+			homePanel.setBackground(Color.BLUE);
+		else if (buttonPressed == ball)
 			newball = new EightBallGUI();
-		//if (buttonPressed == dice)
-			// to do
-		if (buttonPressed == fortune)
+		//else if (buttonPressed == dice)
+			// newDie = new DiceGUI();
+		else if (buttonPressed == fortune)
 			newCookie = new FortCookieGUI();
-		if (buttonPressed == numbers)
+		else if (buttonPressed == numbers)
 			newLotto = new TicketGeneratorGUI();
 	}
 	
