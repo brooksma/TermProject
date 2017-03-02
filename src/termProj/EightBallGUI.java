@@ -34,6 +34,8 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
 	 */
 	public EightBallGUI() {
+		eightBallPane.setBackground(Color.WHITE);
+		
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.gridx = 1;
 		constraints.gridy = 0;
