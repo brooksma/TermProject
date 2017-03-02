@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class EightBallTests {
-	
 	@Test
 	public final void testEightBall() {
 		EightBall constructorTest = new EightBall();
@@ -29,5 +28,21 @@ public class EightBallTests {
 		assertNotNull("Response was not set when given parameter." , response);
 		assertNotEquals("Luck was not set when given parameter." , shaken2.luckyCounter, 0);
 	}
-
+	
+	@Test
+	public final void testPerformed() {
+		EightBallGUI perform = new EightBallGUI();
+		perform.shakeButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+		assertFalse(perform.imageLabel.isVisible());
+		assertTrue(perform.imageLabel2.isVisible());
+ 
+		perform.retryButton.setEnabled(true);
+		perform.retryButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+		assertFalse(perform.imageLabel2.isVisible());
+		assertTrue(perform.imageLabel.isVisible());
+		assertFalse(perform.retryButton.isEnabled());
+		assertTrue(perform.shakeButton.isEnabled());
+	}
 }

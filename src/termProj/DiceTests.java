@@ -2,6 +2,8 @@ package termProj;
 
 import static org.junit.Assert.*;
 
+import javax.swing.ImageIcon;
+
 import org.junit.Test;
 
 public class DiceTests {
@@ -30,5 +32,16 @@ public class DiceTests {
 		assertNotEquals(rollTest.roll(), 0);
 		assertNotEquals(rollTest.roll(), 0);
 	}
-
+	
+	@Test
+	public final void testPerformed() {
+		DiceGUI perform = new DiceGUI();
+		perform.rollButton.doClick();
+		assertEquals("Image one error", perform.die0Image, perform.image0Label.getIcon());
+		assertEquals("Image two error", perform.die1Image, perform.image1Label.getIcon());
+		if(perform.die0 == 1 && perform.die1 == 1){
+			assertTrue(perform.fireLabel.isVisible());
+			assertTrue(perform.output.isVisible());
+		}
+	}
 }

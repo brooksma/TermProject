@@ -16,7 +16,7 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 	ImageIcon cookieImage1 = new ImageIcon(getClass().getResource("fortune_cookie_unbroken.jpg"));
 	JLabel imageLabel = new JLabel(cookieImage1);
 		
-	Button breakButton = new Button("Break");
+	JButton breakButton = new JButton("Break");
 		
 	TextField output = new TextField();
 		
@@ -57,7 +57,7 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 	}
 		
 	public void actionPerformed(ActionEvent event) {
-		Button buttonPressed = (Button) event.getSource();
+		JButton buttonPressed = (JButton) event.getSource();
 	    if(buttonPressed == breakButton) {
 	        output.setText("Your fortune: " + global.breakCookie());
 	    }

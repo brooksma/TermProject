@@ -21,17 +21,17 @@ public class DiceGUI extends JFrame implements ActionListener {
 	
 	JPanel diePane = new JPanel(new GridBagLayout());
 	
-	ImageIcon die0Image = new ImageIcon(getClass().getResource("/images/" + die0 + ".png"));
+	ImageIcon die0Image = new ImageIcon(getClass().getResource(die0 + ".png"));
 	JLabel image0Label = new JLabel(die0Image);
 	
-	ImageIcon die1Image = new ImageIcon(getClass().getResource("/images/" +  die1 + ".png"));
+	ImageIcon die1Image = new ImageIcon(getClass().getResource(die1 + ".png"));
 	JLabel image1Label = new JLabel(die1Image);
 	
-	URL fire = getClass().getResource("/images/fireworks.gif");
+	URL fire = getClass().getResource("fireworks.gif");
 	Icon fireIcon = new ImageIcon(fire);
 	JLabel fireLabel = new JLabel(fireIcon);
 	
-	Button rollButton = new Button("Roll");
+	JButton rollButton = new JButton("Roll");
 	
 	TextField output = new TextField("Snake Eyes!");
 	
@@ -82,13 +82,13 @@ public class DiceGUI extends JFrame implements ActionListener {
 		diePane.add(output, constraints3);
 		
 		dieFrame.add(diePane);
-		dieFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		dieFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		dieFrame.pack();
 		dieFrame.setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent event) {
-		Button buttonPressed = (Button) event.getSource();
+		JButton buttonPressed = (JButton) event.getSource();
 		
         if(buttonPressed == rollButton) {
         	if(output.isVisible()) {
@@ -98,9 +98,9 @@ public class DiceGUI extends JFrame implements ActionListener {
         	}
         	die0 = newDie.roll();
         	die1 = newDie.roll();
-        	die0Image = new ImageIcon(getClass().getResource("/images/" + die0 + ".png"));
+        	die0Image = new ImageIcon(getClass().getResource(die0 + ".png"));
         	image0Label.setIcon(die0Image);
-        	die1Image = new ImageIcon(getClass().getResource("/images/" + die1 + ".png"));
+        	die1Image = new ImageIcon(getClass().getResource(die1 + ".png"));
         	image1Label.setIcon(die1Image);
         	
         	if(die0 == 1 && die1 == 1) {

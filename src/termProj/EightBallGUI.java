@@ -1,6 +1,5 @@
 package termProj;
 
-import java.awt.Button;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,8 +22,8 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	JLabel imageLabel = new JLabel(eightBallImage);
 	JLabel imageLabel2 = new JLabel(eightBallImage2);
 	
-	Button shakeButton = new Button("Shake");
-	Button retryButton = new Button("Try Again");
+	JButton shakeButton = new JButton("Shake");
+	JButton retryButton = new JButton("Try Again");
 	
 	TextField output = new TextField("Please ask a yes or no question.");
 	TextField input = new TextField();
@@ -97,14 +96,16 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent event) {
-        Button buttonPressed = (Button) event.getSource();
+        JButton buttonPressed = (JButton) event.getSource();
         if(buttonPressed == shakeButton) {
         	int start = globalBall.luckyCounter;
         	output.setText("'" + input.getText() + "'" + " " + globalBall.shakeBall());		
         	imageLabel.setVisible(false);
         	imageLabel2.setVisible(true);
-        	if(start == globalBall.luckyCounter)
+        	if(start > globalBall.luckyCounter) {
         		retryButton.setEnabled(true);
+        		shakeButton.setEnabled(false);
+        	}
         	else {
         		retryButton.setEnabled(false);
         		input.setText("Another question?");
@@ -113,6 +114,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
         else if(buttonPressed == retryButton) {
         	output.setText(input.getText() + " " + globalBall.shakeBall());
         	retryButton.setEnabled(false);
+        	shakeButton.setEnabled(true);
         	imageLabel.setVisible(true);
         	imageLabel2.setVisible(false);
         }

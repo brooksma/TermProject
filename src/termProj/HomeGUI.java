@@ -8,6 +8,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -24,14 +25,18 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	JFrame homeFrame = new JFrame("Test Your Luck");
 	JPanel homePanel = new JPanel(new GridLayout(1,2));
 	
-	Button fortune = new Button("Fourtune Cookie");
-	Button ball = new Button("Magic 8-Ball");
-	Button numbers = new Button("Lotto Ticket Number Generator");
-	Button dice = new Button("Roll the Dice");
+	JButton fortune = new JButton("Fortune Cookie");
+	JButton ball = new JButton("Magic 8-Ball");
+	JButton numbers = new JButton("Lotto Ticket Number Generator");
+	JButton dice = new JButton("Roll the Dice");
 	
 	TextField output = new TextField("Welcome! Please select an option.");
 	
-		
+	EightBallGUI newBall;
+	FortCookieGUI newCookie;
+	DiceGUI newDice;
+	TicketGeneratorGUI newLotto;
+	
 	/**
 	 * Sets up a Graphics User Interface for the basic Ticket Generator module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
@@ -39,17 +44,17 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	public HomeGUI() {
 		
 		setJMenuBar(menuBar);
-	    JMenu colorMenu = new JMenu("Color");
-	    red = colorMenu.add("Red");
-	    green = colorMenu.add("Green");
-	    blue = colorMenu.add("Blue");
-	    ButtonGroup choice = new ButtonGroup();
-	    choice.add(red);
-	    choice.add(green);
-	    choice.add(blue);
-	    menuBar.add(colorMenu); 
-	    menuBar.setVisible(true);
-	    
+		JMenu colorMenu = new JMenu("Color");
+		red = colorMenu.add("Red");
+		green = colorMenu.add("Green");
+		blue = colorMenu.add("Blue");
+		ButtonGroup choice = new ButtonGroup();
+		choice.add(red);
+		choice.add(green);
+		choice.add(blue);
+		menuBar.add(colorMenu); 
+		menuBar.setVisible(true); 
+		 	    
 		/* Welcome Message to the user*/
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.weighty = 2;
@@ -106,14 +111,11 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Button buttonPressed = (Button) e.getSource();
-		EightBallGUI newball;
-		FortCookieGUI newCookie;
-		TicketGeneratorGUI newLotto;
+		JButton buttonPressed = (JButton) e.getSource();
 		if (buttonPressed == ball)
-			newball = new EightBallGUI();
-		//if (buttonPressed == dice)
-			// to do
+			newBall = new EightBallGUI();
+		if (buttonPressed == dice)
+			newDice = new DiceGUI();
 		if (buttonPressed == fortune)
 			newCookie = new FortCookieGUI();
 		if (buttonPressed == numbers)

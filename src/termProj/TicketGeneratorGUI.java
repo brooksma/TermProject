@@ -1,11 +1,12 @@
 package termProj;
 
-import java.awt.Button;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -16,12 +17,12 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	
 	JPanel tcktPane = new JPanel(new GridBagLayout());
 	
-	Button twoButton = new Button("Lucky Shot");
-	Button threeButton = new Button("Pick Three");
-	Button sixButton = new Button("Six Pairs");
-	Button sevenButton = new Button("Seven Pairs");
-	Button genButton = new Button("Generate Number");
-	Button gen2Button = new Button("Generate Pairs");
+	JButton twoButton = new JButton("Lucky Shot");
+	JButton threeButton = new JButton("Pick Three");
+	JButton sixButton = new JButton("Six Pairs");
+	JButton sevenButton = new JButton("Seven Pairs");
+	JButton genButton = new JButton("Generate Number");
+	JButton gen2Button = new JButton("Generate Pairs");
 	
 	TextField output = new TextField("Please select an option.");
 	
@@ -94,7 +95,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent event) {
-        Button buttonPressed = (Button) event.getSource();
+        JButton buttonPressed = (JButton) event.getSource();
         //int complete = 2;
         if(buttonPressed == twoButton)
         	output.setText(globalTckt.luckyShot());

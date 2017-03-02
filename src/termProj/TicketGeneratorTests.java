@@ -65,5 +65,21 @@ public class TicketGeneratorTests {
 		System.out.println("GeneratePairs: " + testor);
 		assertEquals("Generated size incorrectly." , testor.length(), 14);
 	}
+	
+	@Test
+	public final void testPerformed() {
+		TicketGeneratorGUI perform = new TicketGeneratorGUI();
+		perform.twoButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+		
+		perform.threeButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+		
+		perform.sixButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+		
+		perform.sevenButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+	}
 
 }

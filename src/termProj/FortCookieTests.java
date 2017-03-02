@@ -29,5 +29,11 @@ public class FortCookieTests {
 		assertNotNull("Phrase was not returned" , phrase2);
 		assertNotEquals("Counter was not changed." , broke2.luckyCounter, 0);
 	}
-
+	
+	@Test
+	public final void testPerformed() {
+		FortCookieGUI perform = new FortCookieGUI();
+		perform.breakButton.doClick();
+		assertNotNull("Text field was not set.", perform.output);
+	}
 }
