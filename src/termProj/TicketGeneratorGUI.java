@@ -117,11 +117,4 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
         	output.setText(globalTckt.sevenPair());
         }
     }
-
-	/** Executes the TicketGeneratorGUI. 
-	 * @param args Used by main.*/
-	public static void main(final String[] args) {
-		@SuppressWarnings("unused")
-		TicketGeneratorGUI tckt = new TicketGeneratorGUI();
-    }
 }

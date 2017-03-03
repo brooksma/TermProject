@@ -154,14 +154,4 @@ public class DiceGUI extends JFrame implements ActionListener {
         	}
         }
 	}
-	
-	/**
-	 *  The executable call for the Dice module.
-	 * @param args Workable for an executable
-	 */
-	public static void main(final String[] args) {
-		@SuppressWarnings("unused")
-		DiceGUI dice = new DiceGUI();
-	}
-
 }

@@ -143,13 +143,4 @@ public class EightBallGUI extends JFrame implements ActionListener {
         	imageLabel2.setVisible(false);
         }
     }
-
-	/**
-	 * The executable method for the EightBall module.
-	 * @param args In the main.
-	 */
-	public static void main(final String[] args) {
-		@SuppressWarnings("unused")
-		EightBallGUI eight = new EightBallGUI();
-    }
 }

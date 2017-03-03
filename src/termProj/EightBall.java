@@ -59,11 +59,11 @@ public class EightBall {
 	public String shakeBall() {	
 		String response = responses[randomNumber.nextInt(6)];
 			
-		if (response == responses[0] || response == responses[2]
-				|| response == responses[4]) {
+		if (response.equals(responses[0]) || response.equals(responses[2])
+				|| response.equals(responses[4])) {
 			luckyCounter += 1;
-		} else if (response == responses[1] || response == responses[3]
-				|| response == responses[5]) {
+		} else if (response.equals(responses[1]) || response.equals(responses[3])
+				|| response.equals(responses[5])) {
 			luckyCounter -= 1;
 		}
 			

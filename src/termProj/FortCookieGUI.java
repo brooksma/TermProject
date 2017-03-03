@@ -78,11 +78,4 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 	        output.setText("Your fortune: " + global.breakCookie());
 	    }
 	}
-
-	/** Executable for a FortCookie module. 
-	 * @param args Used in main. */
-	public static void main(final String[] args) {
-		@SuppressWarnings("unused")
-		FortCookieGUI fortune = new FortCookieGUI();
-    }
 }
