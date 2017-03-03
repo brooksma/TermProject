@@ -18,6 +18,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	
 	Label output = new Label("Welcome! Please select an option.");
 	
+	Object[] options = {"Red" , "Green" , "Blue" };
+	String colour;
+	
 	EightBallGUI newBall;
 	FortCookieGUI newCookie;
 	TicketGeneratorGUI newLotto;
@@ -87,8 +90,7 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		JButton buttonPressed = (JButton) e.getSource();
 		
 		if (buttonPressed == color) {
-			Object[] options = {"Red" , "Green" , "Blue" };
-			String colour = (String) JOptionPane.showInputDialog(homeFrame, "Select a color", "Background Color", JOptionPane.QUESTION_MESSAGE,
+			colour = (String) JOptionPane.showInputDialog(homeFrame, "Select a color", "Background Color", JOptionPane.QUESTION_MESSAGE,
 					null, options, options[2]);
 			if(colour == options[0]) {
 				homePanel.setBackground(new Color(125, 0, 0));
