@@ -93,17 +93,62 @@ public class HomeGUI  extends JFrame implements ActionListener {
 			if(colour == options[0]) {
 				homePanel.setBackground(new Color(125, 0, 0));
 				color.setBackground(new Color(125, 0, 0));
+				color.setForeground(Color.WHITE);
 				color.setOpaque(true);
+				ball.setBackground(new Color(125, 0, 0));
+				ball.setForeground(Color.WHITE);
+				ball.setOpaque(true);
+				dice.setBackground(new Color(125, 0, 0));
+				dice.setForeground(Color.WHITE);
+				dice.setOpaque(true);
+				fortune.setBackground(new Color(125, 0, 0));
+				fortune.setForeground(Color.WHITE);
+				fortune.setOpaque(true);
+				numbers.setBackground(new Color(125, 0, 0));
+				numbers.setForeground(Color.WHITE);
+				numbers.setOpaque(true);
+				output.setBackground(new Color(125, 0, 0));
+				output.setForeground(Color.WHITE);
 			}
 			else if(colour == options[1]) {
 				homePanel.setBackground(new Color(0, 125, 0));
 				color.setBackground(new Color(0, 125, 0));
+				color.setForeground(Color.WHITE);
 				color.setOpaque(true);
+				ball.setBackground(new Color(0, 125, 0));
+				ball.setForeground(Color.WHITE);
+				ball.setOpaque(true);
+				dice.setBackground(new Color(0, 125, 0));
+				dice.setForeground(Color.WHITE);
+				dice.setOpaque(true);
+				fortune.setBackground(new Color(0, 125, 0));
+				fortune.setForeground(Color.WHITE);
+				fortune.setOpaque(true);
+				numbers.setBackground(new Color(0, 125, 0));
+				numbers.setForeground(Color.WHITE);
+				numbers.setOpaque(true);
+				output.setBackground(new Color(0, 125, 0));
+				output.setForeground(Color.WHITE);
 			}
 			else if(colour == options[2]) {
 				homePanel.setBackground(new Color(0, 0, 125));
 				color.setBackground(new Color(0, 0, 125));
+				color.setForeground(Color.WHITE);
 				color.setOpaque(true);
+				ball.setBackground(new Color(0, 0, 125));
+				ball.setForeground(Color.WHITE);
+				ball.setOpaque(true);
+				dice.setBackground(new Color(0, 0, 125));
+				dice.setForeground(Color.WHITE);
+				dice.setOpaque(true);
+				fortune.setBackground(new Color(0, 0, 125));
+				fortune.setForeground(Color.WHITE);
+				fortune.setOpaque(true);
+				numbers.setBackground(new Color(0, 0, 125));
+				numbers.setForeground(Color.WHITE);
+				numbers.setOpaque(true);
+				output.setBackground(new Color(0, 0, 125));
+				output.setForeground(Color.WHITE);
 			}
 		}
 		else if (buttonPressed == ball)
