@@ -1,104 +1,77 @@
 package termProj;
 
-import java.awt.Button;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.ButtonGroup;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 
 public class HomeGUI  extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
-	JMenuBar menuBar = new JMenuBar();
-	JMenuItem red, green, blue;
-	
 	JFrame homeFrame = new JFrame("Test Your Luck");
-	JPanel homePanel = new JPanel(new GridLayout(1,2));
+	JPanel homePanel = new JPanel(new GridLayout(3,5));
 	
+	JButton color = new JButton("Background Color");
 	JButton fortune = new JButton("Fortune Cookie");
 	JButton ball = new JButton("Magic 8-Ball");
 	JButton numbers = new JButton("Lotto Ticket Number Generator");
 	JButton dice = new JButton("Roll the Dice");
 	
-	TextField output = new TextField("Welcome! Please select an option.");
+	Label output = new Label("Welcome! Please select an option.");
 	
 	EightBallGUI newBall;
 	FortCookieGUI newCookie;
-	DiceGUI newDice;
 	TicketGeneratorGUI newLotto;
+	DiceGUI newDice;
 	
+		
 	/**
 	 * Sets up a Graphics User Interface for the basic Ticket Generator module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
 	 */
 	public HomeGUI() {
-		
-		setJMenuBar(menuBar);
-		JMenu colorMenu = new JMenu("Color");
-		red = colorMenu.add("Red");
-		green = colorMenu.add("Green");
-		blue = colorMenu.add("Blue");
-		ButtonGroup choice = new ButtonGroup();
-		choice.add(red);
-		choice.add(green);
-		choice.add(blue);
-		menuBar.add(colorMenu); 
-		menuBar.setVisible(true); 
-		 	    
+	    
 		/* Welcome Message to the user*/
 		GridBagConstraints constraints = new GridBagConstraints();
-		constraints.weighty = 2;
-		constraints.gridwidth = 2;
-		constraints.gridheight = 2;
-		constraints.gridx = 1;
+		constraints.gridx = 3;
 		constraints.gridy = 0;
-		constraints.fill = GridBagConstraints.HORIZONTAL;
+		constraints.fill = GridBagConstraints.BOTH;
+		constraints.anchor = GridBagConstraints.PAGE_START;
 		homePanel.add(output, constraints);
-		output.setEditable(false);
+		
+		//Personalization
+		GridBagConstraints constraints0 = new GridBagConstraints();
+		constraints0.gridx = 3;
+		constraints0.gridy = 1;
+		constraints0.fill = GridBagConstraints.HORIZONTAL;
+		homePanel.add(color, constraints0);
+		color.addActionListener(this);
+		
 		
 		/* Dice Button */
 		GridBagConstraints constraints1 = new GridBagConstraints();
-		constraints1.gridx = 2;
-		constraints1.gridy = 0;
-		constraints1.weighty = 0.5;
-		constraints1.weightx = 0.5;
+		constraints1.gridx = 0;
+		constraints1.gridy = 2;
 		homePanel.add(dice, constraints1);
 		dice.addActionListener(this);
 		
 		/* 8 Ball Button */
 		GridBagConstraints constraints2 = new GridBagConstraints();
-		constraints2.gridx = 2;
-		constraints2.gridy = 1;
-		constraints2.weighty = 0.5;
-		constraints2.weightx = 0.5;
+		constraints2.gridx = 1;
+		constraints2.gridy = 2;
 		homePanel.add(ball, constraints2);
 		ball.addActionListener(this);
 		
 		/* Ticket Generator*/
 		GridBagConstraints constraints3 = new GridBagConstraints();
-		constraints3.gridx = 2;
+		constraints3.gridx = 3;
 		constraints3.gridy = 2;
-		constraints3.weighty = 0.5;
-		constraints3.weightx = 0.5;
 		homePanel.add(numbers, constraints3);
 		numbers.addActionListener(this);
 		
 		/* Fortune Cookie */
 		GridBagConstraints constraints4 = new GridBagConstraints();
-		constraints4.gridx = 2;
-		constraints4.gridy = 3;
-		constraints4.weighty = 0.5;
-		constraints4.weightx = 0.5;
+		constraints4.gridx = 4;
+		constraints4.gridy = 2;
 		homePanel.add(fortune, constraints4);
 		fortune.addActionListener(this);
 		
@@ -112,13 +85,34 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonPressed = (JButton) e.getSource();
-		if (buttonPressed == ball)
+		
+		if (buttonPressed == color) {
+			Object[] options = {"Red" , "Green" , "Blue" };
+			String colour = (String) JOptionPane.showInputDialog(homeFrame, "Select a color", "Background Color", JOptionPane.QUESTION_MESSAGE,
+					null, options, options[2]);
+			if(colour == options[0]) {
+				homePanel.setBackground(new Color(125, 0, 0));
+				color.setBackground(new Color(125, 0, 0));
+				color.setOpaque(true);
+			}
+			else if(colour == options[1]) {
+				homePanel.setBackground(new Color(0, 125, 0));
+				color.setBackground(new Color(0, 125, 0));
+				color.setOpaque(true);
+			}
+			else if(colour == options[2]) {
+				homePanel.setBackground(new Color(0, 0, 125));
+				color.setBackground(new Color(0, 0, 125));
+				color.setOpaque(true);
+			}
+		}
+		else if (buttonPressed == ball)
 			newBall = new EightBallGUI();
-		if (buttonPressed == dice)
+		else if (buttonPressed == dice)
 			newDice = new DiceGUI();
-		if (buttonPressed == fortune)
+		else if (buttonPressed == fortune)
 			newCookie = new FortCookieGUI();
-		if (buttonPressed == numbers)
+		else if (buttonPressed == numbers)
 			newLotto = new TicketGeneratorGUI();
 	}
 	
