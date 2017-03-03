@@ -92,7 +92,7 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		if (buttonPressed == color) {
 			colour = (String) JOptionPane.showInputDialog(homeFrame, "Select a color", "Background Color", JOptionPane.QUESTION_MESSAGE,
 					null, options, options[2]);
-			if(colour == options[0]) {
+			if(colour.equals(options[0])) {
 				homePanel.setBackground(new Color(125, 0, 0));
 				color.setBackground(new Color(125, 0, 0));
 				color.setForeground(Color.WHITE);
@@ -112,7 +112,7 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				output.setBackground(new Color(125, 0, 0));
 				output.setForeground(Color.WHITE);
 			}
-			else if(colour == options[1]) {
+			else if(colour.equals(options[1])) {
 				homePanel.setBackground(new Color(0, 125, 0));
 				color.setBackground(new Color(0, 125, 0));
 				color.setForeground(Color.WHITE);
@@ -132,7 +132,7 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				output.setBackground(new Color(0, 125, 0));
 				output.setForeground(Color.WHITE);
 			}
-			else if(colour == options[2]) {
+			else if(colour.equals(options[2])) {
 				homePanel.setBackground(new Color(0, 0, 125));
 				color.setBackground(new Color(0, 0, 125));
 				color.setForeground(Color.WHITE);

@@ -1,9 +1,6 @@
 package termProj;
 
 import static org.junit.Assert.*;
-
-import javax.swing.ImageIcon;
-
 import org.junit.Test;
 
 public class DiceTests {

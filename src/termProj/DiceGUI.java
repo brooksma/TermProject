@@ -110,9 +110,4 @@ public class DiceGUI extends JFrame implements ActionListener {
         	}
 	}
 	}
-
-	public static void main(String[] args) {
-		@SuppressWarnings("unused")
-		DiceGUI dice = new DiceGUI();
-	}
 }

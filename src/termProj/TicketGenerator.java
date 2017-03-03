@@ -85,7 +85,7 @@ public class TicketGenerator {
 			throw new IllegalArgumentException("Please enter a number greater than zero and less than 50.");
 		else {
 			for(int iterator = 0; iterator < numDigits; iterator++)
-				fullNum += "" + generator.nextInt(10);
+				fullNum += fullNum + generator.nextInt(10);
 		}
 		return fullNum;
 	}
@@ -104,7 +104,7 @@ public class TicketGenerator {
 		else {
 			TicketGenerator tckt = new TicketGenerator();
 			for(int iterator = 0; iterator < numPairs; iterator++)
-				fullNum += "" + tckt.luckyShot();
+				fullNum += fullNum + tckt.luckyShot();
 		}
 		return fullNum;
 	}

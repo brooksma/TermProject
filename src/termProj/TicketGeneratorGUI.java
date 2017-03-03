@@ -142,9 +142,4 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
         	input.setEditable(false);
         }*/
     }
-
-	public static void main(String[] args) {
-		@SuppressWarnings("unused")
-		TicketGeneratorGUI tckt = new TicketGeneratorGUI();
-    }
 }
