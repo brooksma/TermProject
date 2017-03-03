@@ -3,37 +3,31 @@ package termProj;
 import java.util.Random;
 
 /**
- * This is a class which defines the code backbone for a Magic Eight Ball. It allows
- * for the creation of an <code>EightBall</code> object, the resetting of said object
- * and its public parts, and a pseudorandomly chosen response to a yes / no question. <p>
- * <b>Fields: </b> <p>
- * ball: public, an <code>EightBall</code> object <p>
- * responses: private final, an array of <code>Strings</code> denoting possible responses the
- * <code>EightBall</code> can give <p>
- * randomNumber: private, a <code>Random</code> object <p>
- * luckyCounter: public, an <code>int</code> holding how much luck the user has encountered
- * <p><b>Methods:</b> <p>
- * <code>EightBall()</code>: constructor <p>
- * <code>shakeBall()</code>: sets the ball's response and updates the <code>luckyCounter</code>
+ * This is a class which defines the code backbone for a Magic Eight Ball.
+ * It allows for the creation of an <code>EightBall</code> object
+ * and a pseudorandomly chosen response to a yes / no question.
  * @author Natasha Speck
  * @version 1.4, 2017/02/26
  */
 public class EightBall {
 	
-	//Fields
-	public EightBall ball;
-	private final String[] responses = { "Yes." , "No." , "Maybe" , "It is uncertain, try again." ,
-			"It is likely" , "It is unlikely." };
+	/** A public EightBall object. */
+	private EightBall ball;
+	/** An array of possible String responses to queries. */
+	private final String[] responses = {"Yes.", "No.", "Maybe",
+			"It is uncertain, try again.", "It is likely",
+			"It is unlikely."};
+	/** A Random object to select a response. */
 	private Random randomNumber;
-	public int luckyCounter;
+	/** A counter to hold how lucky a user is based on responses. */
+	private int luckyCounter;
 	
 	//Methods
 	
 	/**
-	 * Constructor for an <code>EightBall</code> object.
-	 * <p>
-	 * Initializes a new ball, a <code>Random</code> object, and a luck counter to
-	 * be used in calculations.
+	 * Constructor for an <code>EightBall</code> object. <p>
+	 * Initializes a new ball, a <code>Random</code> object, and a luck
+	 * counter to be used in calculations.
 	 */
 	public EightBall() {
 		this.ball = null;
@@ -41,33 +35,50 @@ public class EightBall {
 		this.luckyCounter = 0;
 	}
 	
+	/** Returns an EightBall object.
+	 * @return An EightBall object. */
+	public EightBall getBall() {
+		return ball;
+	}
+	
+	/** Returns the luck counter.
+	 * @return The luck counter. */
+	public int getLuck() {
+		return luckyCounter;
+	}
+	
 	/**
 	 * Calculates which response to return with a psuedorandom from the
-	 * <code>Random</code> class. Returns this calculated response to a question,
-	 * and increases or decreases the luck counter based upon it.
-	 * <p>
-	 * Positive responses increment the luck counter by 1, negative responses
-	 * decrease the luck counter by 1.
-	 * @return <code>response</code>: the <code>EightBall</code>'s <code>String</code> response to a query
+	 * <code>Random</code> class. Returns this calculated response to a
+	 * question, and increases or decreases the luck counter based upon
+	 * it. <p> Positive responses increment the luck counter by 1,
+	 * negative responses decrease the luck counter by 1.
+	 * @return response the <code>EightBall</code>'s <code>String
+	 * </code> response to a query.
 	 */
 	public String shakeBall() {	
 		String response = responses[randomNumber.nextInt(6)];
-		
-		if(response.equals(responses[0]) || response.equals(responses[2]) || response.equals(responses[4]))
+			
+		if (response == responses[0] || response == responses[2]
+				|| response == responses[4]) {
 			luckyCounter += 1;
-		else if(response.equals(responses[1]) || response.equals(responses[3]) || response.equals(responses[5]))
+		} else if (response == responses[1] || response == responses[3]
+				|| response == responses[5]) {
 			luckyCounter -= 1;
-		
+		}
+			
 		return response;
 	}
 	
 	/**
-	 * Shakes a specified <code>EightBall</code> object using <code>shakeBall()</code>.
+	 * Shakes a specified <code>EightBall</code> object using
+	 * <code>shakeBall()</code>.
 	 * @see this.shakeBall()
-	 * @param <code>toShake</code>: a specified <code>EightBall</code> object
-	 * @return <code>response</code>: the <code>EightBall</code>'s <code>String</code> response to a query
+	 * @param toShake a specified<code>EightBall</code> object
+	 * @return response the <code>EightBall</code>'s
+	 * <code>String</code> response to a query
 	 */
-	public static String shakeBall(EightBall toShake) {
+	public static String shakeBall(final EightBall toShake) {
 		String response = toShake.shakeBall();
 		return response;
 	}

@@ -1,26 +1,40 @@
 package termProj;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-//basic GUI for FortCookie
+/** A basic GUI for a FortCookie. */
 public class FortCookieGUI extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	/** A FortCookie object. */
 	FortCookie global = new FortCookie();
-	JFrame cookieFrame = new JFrame("Fortune Cookie");
 	
+	/** A JFrame to house a FortCookie module. */
+	JFrame cookieFrame = new JFrame("Fortune Cookie");
+	/** A JPanel to house a FortCookie module. */
 	JPanel cookiePanel = new JPanel(new GridBagLayout());
 	
-	ImageIcon cookieImage1 = new ImageIcon(getClass().getResource("fortune_cookie_unbroken.jpg"));
+	/** An ImageIcon of a fortune cookie. */
+	ImageIcon cookieImage1 = new ImageIcon(getClass().getResource(
+			"/images/fortune_cookie_unbroken.jpg.png"));
+	/** A JLabel for the image of a fortune cookie. */
 	JLabel imageLabel = new JLabel(cookieImage1);
 		
+	/** A button for the user to receive a fortune. */
 	JButton breakButton = new JButton("Break");
-		
+	
+	/** A TextField for the fortune to be displayed. */
 	TextField output = new TextField();
 		
-	//basic GUI setup for Fortune Cookie
+	/** Constructs a FortCookieGUI in a JPanel and JFrame. */
 	public FortCookieGUI() {
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.gridx = 1;
@@ -55,11 +69,20 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 	    cookieFrame.pack();
 	    cookieFrame.setVisible(true);
 	}
-		
-	public void actionPerformed(ActionEvent event) {
+	
+	/** Checks to see if a button was selected. 
+	 * @param event The button selected. */
+	public void actionPerformed(final ActionEvent event) {
 		JButton buttonPressed = (JButton) event.getSource();
-	    if(buttonPressed == breakButton) {
+	    if (buttonPressed == breakButton) {
 	        output.setText("Your fortune: " + global.breakCookie());
 	    }
 	}
+
+	/** Executable for a FortCookie module. 
+	 * @param args Used in main. */
+	public static void main(final String[] args) {
+		@SuppressWarnings("unused")
+		FortCookieGUI fortune = new FortCookieGUI();
+    }
 }

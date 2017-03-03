@@ -1,9 +1,16 @@
 package termProj;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * A basic executable GUI for the Magic Eight Ball module.
@@ -12,20 +19,32 @@ import java.awt.event.ActionListener;
  */
 public class EightBallGUI extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	/** An EightBall object for the module. */
 	EightBall globalBall = new EightBall();
+	/** A JFrame object for the module. */
 	JFrame eightBallFrame = new JFrame("Magic Eight Ball");
-	
+	/** A JPanel object for the module. */
 	JPanel eightBallPane = new JPanel(new GridBagLayout());
 	
-	ImageIcon eightBallImage = new ImageIcon(getClass().getResource("eight_ball.jpg"));
-	ImageIcon eightBallImage2 = new ImageIcon(getClass().getResource("shaken_eight_ball.jpg"));
+	/** The image of an eight ball. */
+	ImageIcon eightBallImage = new ImageIcon(getClass().
+			getResource("/images/eight_ball.jpg"));
+	/** The image of a shaken eight ball. */
+	ImageIcon eightBallImage2 = new ImageIcon(getClass().
+			getResource("/images/shaken_eight_ball.jpg"));
+	/** The image of an eight ball as a JLabel. */
 	JLabel imageLabel = new JLabel(eightBallImage);
+	/** The image of a shaken eight ball as a JLabel. */
 	JLabel imageLabel2 = new JLabel(eightBallImage2);
 	
+	/** The button for the user to shake the eight ball. */
 	JButton shakeButton = new JButton("Shake");
+	/** The button for the user to try the same question again. */
 	JButton retryButton = new JButton("Try Again");
 	
+	/** A TextField to output results and information to the user. */
 	TextField output = new TextField("Please ask a yes or no question.");
+	/** A TextField for the user to input a query. */
 	TextField input = new TextField();
 	
 	/**
@@ -90,33 +109,47 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		input.setEditable(true);
 		
 		eightBallFrame.add(eightBallPane);
-		eightBallFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		eightBallFrame.setDefaultCloseOperation(
+				JFrame.DISPOSE_ON_CLOSE);
         eightBallFrame.pack();
         eightBallFrame.setVisible(true);
 	}
 	
-	public void actionPerformed(ActionEvent event) {
+	/**
+	 * Finds if an action was performed and then alters the GUI accordingly.
+	 * @param event the Action performed
+	 */
+	public void actionPerformed(final ActionEvent event) {
         JButton buttonPressed = (JButton) event.getSource();
-        if(buttonPressed == shakeButton) {
-        	int start = globalBall.luckyCounter;
-        	output.setText("'" + input.getText() + "'" + " " + globalBall.shakeBall());		
+        if (buttonPressed == shakeButton) {
+        	int start = globalBall.getLuck();
+        	output.setText("'" + input.getText() + "'" 
+        			+ " " + globalBall.shakeBall());		
         	imageLabel.setVisible(false);
         	imageLabel2.setVisible(true);
-        	if(start > globalBall.luckyCounter) {
-        		retryButton.setEnabled(true);
-        		shakeButton.setEnabled(false);
-        	}
-        	else {
+        	if (start > globalBall.getLuck()) {
         		retryButton.setEnabled(false);
+        		shakeButton.setEnabled(true);
+        		imageLabel.setVisible(true);
+        		imageLabel2.setVisible(false);
+        	} else {
+        		retryButton.setEnabled(true);
         		input.setText("Another question?");
         	}
-        }
-        else if(buttonPressed == retryButton) {
+        } else if (buttonPressed == retryButton) {
         	output.setText(input.getText() + " " + globalBall.shakeBall());
         	retryButton.setEnabled(false);
-        	shakeButton.setEnabled(true);
         	imageLabel.setVisible(true);
         	imageLabel2.setVisible(false);
         }
+    }
+
+	/**
+	 * The executable method for the EightBall module.
+	 * @param args In the main.
+	 */
+	public static void main(final String[] args) {
+		@SuppressWarnings("unused")
+		EightBallGUI eight = new EightBallGUI();
     }
 }

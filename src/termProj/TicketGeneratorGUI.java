@@ -5,29 +5,38 @@ import java.awt.GridBagLayout;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.*;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/** An executable GUI for a TicketGenerator module. */
 public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
+	/** A TicketGenerator object. */
 	TicketGenerator globalTckt = new TicketGenerator();
+	/** A JFrame to house a TicketGenerator module. */
 	JFrame tcktFrame = new JFrame("Lottery Ticket Number Generator");
-	
+	/** A JFrame to house a TicketGenerator module's components. */
 	JPanel tcktPane = new JPanel(new GridBagLayout());
 	
+	/** A button for the user to generate a Lucky Shot. */
 	JButton twoButton = new JButton("Lucky Shot");
+	/** A button for the user to generate a Pick Three. */
 	JButton threeButton = new JButton("Pick Three");
+	/** A button for the user to generate Six Pairs. */
 	JButton sixButton = new JButton("Six Pairs");
+	/** A button for the user to generate Seven Pairs. */
 	JButton sevenButton = new JButton("Seven Pairs");
+	/** A button for the user to generate their own number, RELEASE 02. */
 	JButton genButton = new JButton("Generate Number");
+	/** A button for the user to generate their own pairs, RELEASE 02. */
 	JButton gen2Button = new JButton("Generate Pairs");
 	
+	/** A TextField for the module to interact with the user. */
 	TextField output = new TextField("Please select an option.");
 	
 	/**
-	 * Sets up a Graphics User Interface for the basic Ticket Generator module.
+	 * Sets up a Graphics User Interface for the basic Eight Ball module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
 	 */
 	public TicketGeneratorGUI() {
@@ -94,52 +103,25 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
         tcktFrame.setVisible(true);
 	}
 	
-	public void actionPerformed(ActionEvent event) {
+	/** Checks to see which button was selected. 
+	 * @param event The button selected by the user. */
+	public void actionPerformed(final ActionEvent event) {
         JButton buttonPressed = (JButton) event.getSource();
-        //int complete = 2;
-        if(buttonPressed == twoButton)
+        if (buttonPressed == twoButton) {
         	output.setText(globalTckt.luckyShot());
-        else if(buttonPressed == threeButton)
+        } else if (buttonPressed == threeButton) {
         	output.setText(globalTckt.pickThree());
-        else if(buttonPressed == sixButton)
+        } else if (buttonPressed == sixButton) {
         	output.setText(globalTckt.sixPair());
-        else if(buttonPressed == sevenButton)
+        } else if (buttonPressed == sevenButton) {
         	output.setText(globalTckt.sevenPair());
-        /*Non-Working Code, not promised in first release.
-         * else if(buttonPressed == genButton) {
-        	input.setEditable(true);
-        	output.setText("Please enter a number between 1 and 50, then press 'ENTER'.");
-        	
-        	try {
-        		Integer work = Integer.decode(input.getText());
-        		complete = work.intValue();
-        	} catch (NumberFormatException e) {
-        		output.setText("Please enter numerical digits.");
-        	}
-        	
-        	output.setText(globalTckt.generate(complete));
-        	input.setEditable(false);
         }
-        else if(buttonPressed == gen2Button) {
-        	input.setEditable(true);
-        	output.setText("Please enter a number between 1 and 50, then press 'ENTER'.");
-        	
-        	try {
-				System.in.read();
-			} catch (IOException e) {
-				output.setText("Please press the enter key to complete.");
-				e.printStackTrace();
-			}
-        	
-        	try {
-        		Integer work = Integer.decode(input.getText());
-        		complete = work.intValue();
-        	} catch (NumberFormatException e) {
-        		output.setText("Please enter numerical digits.");
-        	}
-        	
-        	output.setText(globalTckt.generate(complete));
-        	input.setEditable(false);
-        }*/
+    }
+
+	/** Executes the TicketGeneratorGUI. 
+	 * @param args Used by main.*/
+	public static void main(final String[] args) {
+		@SuppressWarnings("unused")
+		TicketGeneratorGUI tckt = new TicketGeneratorGUI();
     }
 }
