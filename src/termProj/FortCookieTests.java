@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /** A testing suite for the GUI and backbone of a FortCookie. */
@@ -44,5 +46,15 @@ public class FortCookieTests {
 		FortCookieGUI perform = new FortCookieGUI();
 		perform.breakButton.doClick();
 		assertNotNull("Text field was not set.", perform.output);
+		assertFalse(perform.imageLabel.isVisible());
+		assertTrue(perform.imageLabel2.isVisible());
+		assertFalse(perform.breakButton.isEnabled());
+		assertTrue(perform.againButton.isEnabled());
+		
+		perform.againButton.doClick();
+		assertFalse(perform.imageLabel2.isVisible());
+		assertTrue(perform.imageLabel.isVisible());
+		assertFalse(perform.againButton.isEnabled());
+		assertTrue(perform.breakButton.isEnabled());
 	}
 }
