@@ -28,10 +28,10 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	
 	/** The image of an eight ball. */
 	ImageIcon eightBallImage = new ImageIcon(getClass().
-			getResource("/images/eight_ball.jpg"));
+			getResource("eight_ball.jpg"));
 	/** The image of a shaken eight ball. */
 	ImageIcon eightBallImage2 = new ImageIcon(getClass().
-			getResource("/images/shaken_eight_ball.jpg"));
+			getResource("shaken_eight_ball.jpg"));
 	/** The image of an eight ball as a JLabel. */
 	JLabel imageLabel = new JLabel(eightBallImage);
 	/** The image of a shaken eight ball as a JLabel. */

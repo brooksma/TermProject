@@ -24,12 +24,21 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 	
 	/** An ImageIcon of a fortune cookie. */
 	ImageIcon cookieImage1 = new ImageIcon(getClass().getResource(
-			"/images/fortune_cookie_unbroken.jpg.png"));
+			"fortune_cookie_unbroken.jpg"));
 	/** A JLabel for the image of a fortune cookie. */
 	JLabel imageLabel = new JLabel(cookieImage1);
+	
+	/** An ImageIcon of a broken fortune cookie. */
+	ImageIcon cookieImage2 = new ImageIcon(getClass().getResource(
+			"broken_fortune_cookie.jpg"));
+	/** A JLabel for the image of a broken fortune cookie. */
+	JLabel imageLabel2 = new JLabel(cookieImage2);
 		
 	/** A button for the user to receive a fortune. */
 	JButton breakButton = new JButton("Break");
+	
+	/** A button for the user to receive another fortune. */
+	JButton againButton = new JButton("Again");	
 	
 	/** A TextField for the fortune to be displayed. */
 	TextField output = new TextField();
@@ -44,7 +53,9 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 		constraints.fill = GridBagConstraints.BOTH;
 		constraints.anchor = GridBagConstraints.PAGE_START;
 		cookiePanel.add(imageLabel, constraints);	
-			
+		cookiePanel.add(imageLabel2, constraints);
+		imageLabel2.setVisible(false);
+		
 		GridBagConstraints constraints1 = new GridBagConstraints();
 		constraints1.gridx = 1;
 		constraints1.gridy = 1;	
@@ -53,15 +64,24 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 		cookiePanel.add(breakButton, constraints1);
 		breakButton.addActionListener(this);
 		breakButton.setEnabled(true);
-			
+		
 		GridBagConstraints constraints2 = new GridBagConstraints();
 		constraints2.gridx = 1;
-		constraints2.gridy = 2;
+		constraints2.gridy = 3;	
 		constraints2.weighty = 1.0;
 		constraints2.weightx = 1.0;
-		constraints2.fill = GridBagConstraints.HORIZONTAL;
-		constraints2.anchor = GridBagConstraints.CENTER;
-		cookiePanel.add(output, constraints2);
+		cookiePanel.add(againButton, constraints2);
+		againButton.addActionListener(this);
+		againButton.setEnabled(false);
+			
+		GridBagConstraints constraints3 = new GridBagConstraints();
+		constraints3.gridx = 1;
+		constraints3.gridy = 4;
+		constraints3.weighty = 1.0;
+		constraints3.weightx = 1.0;
+		constraints3.fill = GridBagConstraints.HORIZONTAL;
+		constraints3.anchor = GridBagConstraints.CENTER;
+		cookiePanel.add(output, constraints3);
 		output.setEditable(false);
 			
 		cookieFrame.add(cookiePanel);
@@ -75,7 +95,19 @@ public class FortCookieGUI extends JFrame implements ActionListener {
 	public void actionPerformed(final ActionEvent event) {
 		JButton buttonPressed = (JButton) event.getSource();
 	    if (buttonPressed == breakButton) {
-	        output.setText("Your fortune: " + global.breakCookie());
+	        output.setText("Fortune: " + global.breakCookie());
+	        imageLabel.setVisible(false);
+	        imageLabel2.setVisible(true);
+	        againButton.setEnabled(true);
+	        breakButton.setEnabled(false);
+	    }
+	    
+	    if (buttonPressed == againButton) {
+	    	output.setText("");
+	    	imageLabel.setVisible(true);
+	    	imageLabel2.setVisible(false);
+	    	againButton.setEnabled(false);
+	    	breakButton.setEnabled(true);
 	    }
 	}
 }

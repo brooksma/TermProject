@@ -16,17 +16,17 @@ public class FortCookie {
 	/** An array of possible results which will increment
 	 *  the luckyCounter. */
 	private final String[] lucky = {"A dream you have will come true.", 
-			"The person you desire feels the same about you.", 
+			"The one you desire feels the same.", 
 			"Wealth awaits you very soon.",
 			"Now is the time to try something new.", 
 			"You will live long and enjoy life." };
 	/** An array of possible results which will decrement the 
 	 * luckyCounter. */
 	private final String[] unlucky = {"Today is a disastrous day.", 
-			"It's over your head now. Time to get some help.", 
+			"It's over your head. Time for help.", 
 			"Your life's forecast is cloudy.",
 			"You are being stretched too thin.", 
-			"Prepare for stormy seas in your relatioinship." };
+			"Stormy seas ahead in relationships." };
 	/** A Random object to select a result. */
 	private Random randomNumber;
 	/** A count of how often a user gets a lucky result. */
@@ -58,7 +58,7 @@ public class FortCookie {
 	 *@return a randomly selected result from the lucky or unlucky lists
 	 **/
 	public String breakCookie() {	
-		int luck = randomNumber.nextInt(1);
+		int luck = randomNumber.nextInt(2);
 		String phrase;
 		
 		if (luck == 0) {
