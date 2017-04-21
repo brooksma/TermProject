@@ -55,7 +55,6 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	DiceGUI newDice;
 	/** A NameMatchMakerGUI object for the Dice module. */
 	NameMatchMakerGUI newName;
-	
 	/**counter for luck history */
 	private int luckyCount = 0;
 	

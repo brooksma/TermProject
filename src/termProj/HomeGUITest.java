@@ -27,8 +27,11 @@ public class HomeGUITest {
 		perform.numbers.doClick();
 		assertNotNull("TicketGeneratorGUI error", perform.newLotto);
 		
+		perform.name.doClick();
+		assertNotNull("Name error", perform.name);
+		
 		perform.luck.doClick();
-		assertEquals(perform.getLuck(), perform.newBall.globalBall.getLuck() + perform.newDice.newDie.getLuck() + perform.newCookie.global.getLuck());
+		assertEquals(perform.getLuck(), perform.newBall.globalBall.getLuck() + perform.newDice.newDie.getLuck() + perform.newCookie.global.getLuck() + perform.newName.getLuck());
 		assertNotNull("Output error", perform.output);
 	}
 	
