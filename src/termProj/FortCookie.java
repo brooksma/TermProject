@@ -51,7 +51,7 @@ public class FortCookie {
 	public int getLuck() {
 		return luckyCounter;
 	}
-	
+
 	/**
 	 *Method that gives a random phrase based on a random number.
 	 *Depending on phrase, luckyCounter is incremented or decremented.
@@ -80,11 +80,4 @@ public class FortCookie {
 		String phrase = broke.breakCookie();
 		return phrase;
 	}
-	
-	/** An executable for the FortCookie. 
-	 * @param args Used in main functioning. */
-	public static void main(final String[] args) {
-		FortCookie fort = new FortCookie();
-		System.out.print(breakCookie(fort));
-    	}
 }

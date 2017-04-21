@@ -122,23 +122,17 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	public void actionPerformed(final ActionEvent event) {
         JButton buttonPressed = (JButton) event.getSource();
         if (buttonPressed == shakeButton) {
-        	int start = globalBall.getLuck();
         	output.setText("'" + input.getText() + "'" 
         			+ " " + globalBall.shakeBall());		
         	imageLabel.setVisible(false);
         	imageLabel2.setVisible(true);
-        	if (start > globalBall.getLuck()) {
-        		retryButton.setEnabled(false);
-        		shakeButton.setEnabled(true);
-        		imageLabel.setVisible(true);
-        		imageLabel2.setVisible(false);
-        	} else {
-        		retryButton.setEnabled(true);
-        		input.setText("Another question?");
-        	}
+        	retryButton.setEnabled(true);
+        	shakeButton.setEnabled(false);
+       		input.setText("Another question?");
         } else if (buttonPressed == retryButton) {
         	output.setText(input.getText() + " " + globalBall.shakeBall());
         	retryButton.setEnabled(false);
+        	shakeButton.setEnabled(true);
         	imageLabel.setVisible(true);
         	imageLabel2.setVisible(false);
         }

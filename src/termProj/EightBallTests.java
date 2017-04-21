@@ -52,8 +52,9 @@ public class EightBallTests {
 		assertNotNull("Text field was not set.", perform.output);
 		assertFalse(perform.imageLabel.isVisible());
 		assertTrue(perform.imageLabel2.isVisible());
- 
-		perform.retryButton.setEnabled(true);
+		assertTrue(perform.retryButton.isEnabled());
+		assertFalse(perform.shakeButton.isEnabled());
+
 		perform.retryButton.doClick();
 		assertNotNull("Text field was not set.", perform.output);
 		assertFalse(perform.imageLabel2.isVisible());
