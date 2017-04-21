@@ -32,6 +32,8 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	JButton numbers = new JButton("Lotto Ticket Number Generator");
 	/** The JButton for the Dice module. */
 	JButton dice = new JButton("Roll the Dice");
+	/** The JButton for the NameMatchMaker module. */
+	JButton name = new JButton("Name Match Maker");
 	
 	/** A welcome label. */
 	Label output = new Label("Welcome! Please select an option.");
@@ -49,7 +51,8 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	TicketGeneratorGUI newLotto;
 	/** A DiceGUI object for the Dice module. */
 	DiceGUI newDice;
-	
+	/** A NameMatchMakerGUI object for the Dice module. */
+	NameMatchMakerGUI newName;
 		
 	/**
 	 * Sets up a Graphics User Interface for the basic Ticket Generator
@@ -102,6 +105,13 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		constraints4.gridy = 2;
 		homePanel.add(fortune, constraints4);
 		fortune.addActionListener(this);
+		
+		/* Name Match Maker */
+		GridBagConstraints constraints5 = new GridBagConstraints();
+		constraints5.gridx = 4;
+		constraints5.gridy = 3;
+		homePanel.add(name, constraints5);
+		name.addActionListener(this);
 		
 		homeFrame.add(homePanel);
 		homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -185,6 +195,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 			newCookie = new FortCookieGUI();
 		} else if (buttonPressed == numbers) {
 			newLotto = new TicketGeneratorGUI();
+		}
+		else if (buttonPressed == name){
+			newName = new NameMatchMakerGUI();
 		}
 	}
 	
