@@ -166,6 +166,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				numbers.setBackground(new Color(125, 0, 0));
 				numbers.setForeground(Color.WHITE);
 				numbers.setOpaque(true);
+				name.setBackground(new Color(125, 0, 0));
+				name.setForeground(Color.WHITE);
+				name.setOpaque(true);
 				output.setBackground(new Color(125, 0, 0));
 				output.setForeground(Color.WHITE);
 			} else if (colour.equals(options[1])) {
@@ -188,6 +191,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				numbers.setBackground(new Color(0, 125, 0));
 				numbers.setForeground(Color.WHITE);
 				numbers.setOpaque(true);
+				name.setBackground(new Color(0, 125, 0));
+				name.setForeground(Color.WHITE);
+				name.setOpaque(true);
 				output.setBackground(new Color(0, 125, 0));
 				output.setForeground(Color.WHITE);
 			} else if (colour.equals(options[2])) {
@@ -210,6 +216,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				numbers.setBackground(new Color(0, 0, 125));
 				numbers.setForeground(Color.WHITE);
 				numbers.setOpaque(true);
+				name.setBackground(new Color(0, 0, 125));
+				name.setForeground(Color.WHITE);
+				name.setOpaque(true);
 				output.setBackground(new Color(0, 0, 125));
 				output.setForeground(Color.WHITE);
 			}
@@ -221,9 +230,8 @@ public class HomeGUI  extends JFrame implements ActionListener {
 			newCookie = new FortCookieGUI();
 		} else if (buttonPressed == numbers) {
 			newLotto = new TicketGeneratorGUI();
-		}
-		else if (buttonPressed == name){
-				newName = new NameMatchMakerGUI();
+		} else if (buttonPressed == name) {
+			newName = new NameMatchMakerGUI();
 		} else if (buttonPressed == luck) {
 			if(newBall != null) {
 				luckyCount += newBall.globalBall.getLuck();
@@ -233,6 +241,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 			}
 			if(newCookie != null) {
 				luckyCount += newCookie.global.getLuck();
+			}
+			if(newName != null) {
+				luckyCount += newName.getLuck();
 			}
 			output.setText("Current Luck Count: " + luckyCount);
 		}
