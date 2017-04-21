@@ -13,7 +13,8 @@ public class Dice {
 	/** A private object from the Random class to generate the die's
 	 * face number. */
 	private static Random number;
-	
+	/** A count of how often a user gets a lucky result. */
+	public int luckyCounter;
 	/**
 	 * Constructor for a <code>Dice</code> object. <p>
 	 * Initializes a <code>Random</code>, and sets
@@ -28,6 +29,12 @@ public class Dice {
 	 * @return The die. */
 	public int getDie() {
 		return die;
+	}
+	
+	/** Returns the luckyCounter. 
+	 * @return The luckyCounter. */
+	public int getLuck() {
+		return luckyCounter;
 	}
 
 	/**

@@ -26,6 +26,10 @@ public class HomeGUITest {
 		
 		perform.numbers.doClick();
 		assertNotNull("TicketGeneratorGUI error", perform.newLotto);
+		
+		perform.luck.doClick();
+		assertEquals(perform.getLuck(), perform.newBall.globalBall.getLuck() + perform.newDice.newDie.getLuck() + perform.newCookie.global.getLuck());
+		assertNotNull("Output error", perform.output);
 	}
 	
 	/** Tests the personalization options. */
@@ -39,6 +43,12 @@ public class HomeGUITest {
 					new Color(125, 0, 0));
 			assertEquals("Text color error",
 					perform.color.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.luck.getBackground(),
+					new Color(125, 0, 0));
+			assertEquals("Text color error",
+					perform.luck.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error",
 					perform.dice.getBackground(),
@@ -79,6 +89,12 @@ public class HomeGUITest {
 			assertEquals("Text color error", 
 					perform.color.getForeground(),
 					Color.WHITE);
+			assertEquals("Red color error",
+					perform.luck.getBackground(),
+					new Color(0, 125, 0));
+			assertEquals("Text color error",
+					perform.luck.getForeground(),
+					Color.WHITE);
 			assertEquals("Red color error", 
 					perform.dice.getBackground(),
 					new Color(0, 125, 0));
@@ -117,6 +133,12 @@ public class HomeGUITest {
 					new Color(0, 0, 125));
 			assertEquals("Text color error", 
 					perform.color.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.luck.getBackground(),
+					new Color(0, 0, 125));
+			assertEquals("Text color error",
+					perform.luck.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error", 
 					perform.dice.getBackground(),

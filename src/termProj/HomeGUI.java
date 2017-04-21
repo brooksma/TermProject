@@ -24,6 +24,8 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	
 	/** The JButton for the color dialog. */
 	JButton color = new JButton("Background Color");
+	/** The JButton for luck counter. */
+	JButton luck = new JButton("Luck Score");
 	/** The JButton for the fortune cookie module. */
 	JButton fortune = new JButton("Fortune Cookie");
 	/** The JButton for the Magic 8-Ball module. */
@@ -50,7 +52,15 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	/** A DiceGUI object for the Dice module. */
 	DiceGUI newDice;
 	
-		
+	/**counter for luck history */
+	private int luckyCount = 0;
+	
+	/** Returns the luck counter.
+	 * @return The luck counter int. */
+	public int getLuck() {
+		return luckyCount;
+	}
+	
 	/**
 	 * Sets up a Graphics User Interface for the basic Ticket Generator
 	 * module. <p> Uses the <code>GridBagLayout</code> form from the Java
@@ -73,7 +83,14 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		constraints0.fill = GridBagConstraints.HORIZONTAL;
 		homePanel.add(color, constraints0);
 		color.addActionListener(this);
-		
+
+		//Luck
+		GridBagConstraints constraints02 = new GridBagConstraints();
+		constraints02.gridx = 3;
+		constraints02.gridy = 2;
+		constraints02.fill = GridBagConstraints.HORIZONTAL;
+		homePanel.add(luck, constraints02);
+		luck.addActionListener(this);
 		
 		/* Dice Button */
 		GridBagConstraints constraints1 = new GridBagConstraints();
@@ -124,6 +141,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				color.setBackground(new Color(125, 0, 0));
 				color.setForeground(Color.WHITE);
 				color.setOpaque(true);
+				luck.setBackground(new Color(125, 0, 0));
+				luck.setForeground(Color.WHITE);
+				luck.setOpaque(true);
 				ball.setBackground(new Color(125, 0, 0));
 				ball.setForeground(Color.WHITE);
 				ball.setOpaque(true);
@@ -143,6 +163,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				color.setBackground(new Color(0, 125, 0));
 				color.setForeground(Color.WHITE);
 				color.setOpaque(true);
+				luck.setBackground(new Color(0, 125, 0));
+				luck.setForeground(Color.WHITE);
+				luck.setOpaque(true);
 				ball.setBackground(new Color(0, 125, 0));
 				ball.setForeground(Color.WHITE);
 				ball.setOpaque(true);
@@ -162,6 +185,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				color.setBackground(new Color(0, 0, 125));
 				color.setForeground(Color.WHITE);
 				color.setOpaque(true);
+				luck.setBackground(new Color(0, 0, 125));
+				luck.setForeground(Color.WHITE);
+				luck.setOpaque(true);
 				ball.setBackground(new Color(0, 0, 125));
 				ball.setForeground(Color.WHITE);
 				ball.setOpaque(true);
@@ -178,13 +204,24 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				output.setForeground(Color.WHITE);
 			}
 		} else if (buttonPressed == ball) {
-			newBall = new EightBallGUI();
+			newBall = new EightBallGUI();		
 		} else if (buttonPressed == dice) {
 			newDice = new DiceGUI();
 		} else if (buttonPressed == fortune) {
 			newCookie = new FortCookieGUI();
 		} else if (buttonPressed == numbers) {
 			newLotto = new TicketGeneratorGUI();
+		} else if (buttonPressed == luck) {
+			if(newBall != null) {
+				luckyCount += newBall.globalBall.getLuck();
+			}
+			if(newDice != null) {
+				luckyCount += newDice.newDie.getLuck();
+			}
+			if(newCookie != null) {
+				luckyCount += newCookie.global.getLuck();
+			}
+			output.setText("Current Luck Count: " + luckyCount);
 		}
 	}
 	

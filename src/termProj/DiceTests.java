@@ -19,6 +19,14 @@ public class DiceTests {
 		assertNotNull(constructorTest.getDie());
 		assertEquals(constructorTest.getDie(), 1);
 	}
+	
+	/** Testing the fetch luck method. */
+	@Test
+	public final void testGetLuck() {
+		Dice constructorTest = new Dice();
+		assertNotNull(constructorTest.getLuck());
+		assertEquals(constructorTest.getLuck(), 0);
+	}
 
 	/** Testing the backbone code's static <code>roll()</code> method. */
 	@Test
@@ -53,6 +61,7 @@ public class DiceTests {
 		if (perform.getDie0() == 1 && perform.getDie1() == 1) {
 			assertTrue(perform.fireLabel.isVisible());
 			assertTrue(perform.output.isVisible());
+			assertEquals(perform.newDie.getLuck(), 1);
 			}
 		}
 

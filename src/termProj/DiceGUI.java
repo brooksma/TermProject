@@ -151,6 +151,7 @@ public class DiceGUI extends JFrame implements ActionListener {
         		output.setVisible(true);
         		fireLabel.setVisible(true);
         		dieFrame.pack();
+        		newDie.luckyCounter++;
         	}
         }
 	}
