@@ -36,6 +36,8 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	JButton dice = new JButton("Roll the Dice");
 	/** The JButton for the NameMatchMaker module. */
 	JButton name = new JButton("Name Match Maker");
+	/** The JButton for the Runes module. */
+	JButton rune = new JButton("Read Your Runes");
 	
 	/** A welcome label. */
 	Label output = new Label("Welcome! Please select an option.");
@@ -53,8 +55,11 @@ public class HomeGUI  extends JFrame implements ActionListener {
 	TicketGeneratorGUI newLotto;
 	/** A DiceGUI object for the Dice module. */
 	DiceGUI newDice;
-	/** A NameMatchMakerGUI object for the Dice module. */
+	/** A NameMatchMakerGUI object for the Matchmaker module. */
 	NameMatchMakerGUI newName;
+	/** A RunesGUI object for the Runes module. */
+	RunesGUI newRune;
+	
 	/**counter for luck history */
 	private int luckyCount = 0;
 	
@@ -130,6 +135,13 @@ public class HomeGUI  extends JFrame implements ActionListener {
 		homePanel.add(name, constraints5);
 		name.addActionListener(this);
 		
+		/* Runes */
+		GridBagConstraints constraints6 = new GridBagConstraints();
+		constraints5.gridx = 4;
+		constraints5.gridy = 4;
+		homePanel.add(rune, constraints6);
+		rune.addActionListener(this);
+		
 		homeFrame.add(homePanel);
 		homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         homeFrame.pack();
@@ -169,6 +181,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				name.setBackground(new Color(125, 0, 0));
 				name.setForeground(Color.WHITE);
 				name.setOpaque(true);
+				rune.setBackground(new Color(125, 0, 0));
+				rune.setForeground(Color.WHITE);
+				rune.setOpaque(true);
 				output.setBackground(new Color(125, 0, 0));
 				output.setForeground(Color.WHITE);
 			} else if (colour.equals(options[1])) {
@@ -194,6 +209,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				name.setBackground(new Color(0, 125, 0));
 				name.setForeground(Color.WHITE);
 				name.setOpaque(true);
+				rune.setBackground(new Color(0, 125, 0));
+				rune.setForeground(Color.WHITE);
+				rune.setOpaque(true);
 				output.setBackground(new Color(0, 125, 0));
 				output.setForeground(Color.WHITE);
 			} else if (colour.equals(options[2])) {
@@ -219,6 +237,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 				name.setBackground(new Color(0, 0, 125));
 				name.setForeground(Color.WHITE);
 				name.setOpaque(true);
+				rune.setBackground(new Color(0, 0, 125));
+				rune.setForeground(Color.WHITE);
+				rune.setOpaque(true);
 				output.setBackground(new Color(0, 0, 125));
 				output.setForeground(Color.WHITE);
 			}
@@ -232,7 +253,10 @@ public class HomeGUI  extends JFrame implements ActionListener {
 			newLotto = new TicketGeneratorGUI();
 		} else if (buttonPressed == name) {
 			newName = new NameMatchMakerGUI();
-		} else if (buttonPressed == luck) {
+		} else if (buttonPressed == rune) {
+			newRune = new RunesGUI(); 
+		}
+		else if (buttonPressed == luck) {
 			if(newBall != null) {
 				luckyCount += newBall.globalBall.getLuck();
 			}
@@ -244,6 +268,9 @@ public class HomeGUI  extends JFrame implements ActionListener {
 			}
 			if(newName != null) {
 				luckyCount += newName.getLuck();
+			}
+			if(newRune != null) {
+				luckyCount += newRune.runes.getLuck();
 			}
 			output.setText("Current Luck Count: " + luckyCount);
 		}

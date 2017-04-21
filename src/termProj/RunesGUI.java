@@ -23,7 +23,7 @@ public class RunesGUI extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	/** A <code>Runes</code> object. */
-	private Runes runes = new Runes();
+	Runes runes = new Runes();
 	
 	/** A <code>Rune</code> object.*/
 	private Rune rune = new Rune();

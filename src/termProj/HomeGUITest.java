@@ -30,8 +30,12 @@ public class HomeGUITest {
 		perform.name.doClick();
 		assertNotNull("Name error", perform.name);
 		
+		perform.rune.doClick();
+		assertNotNull("Rune error", perform.rune);
+		
 		perform.luck.doClick();
-		assertEquals(perform.getLuck(), perform.newBall.globalBall.getLuck() + perform.newDice.newDie.getLuck() + perform.newCookie.global.getLuck() + perform.newName.getLuck());
+		assertEquals(perform.getLuck(), perform.newBall.globalBall.getLuck() + perform.newDice.newDie.getLuck() +
+				perform.newCookie.global.getLuck() + perform.newName.getLuck() + perform.newRune.runes.getLuck());
 		assertNotNull("Output error", perform.output);
 	}
 	
@@ -76,6 +80,18 @@ public class HomeGUITest {
 					new Color(125, 0, 0));
 			assertEquals("Text color error", 
 					perform.numbers.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.name.getBackground(),
+					new Color(125, 0, 0));
+			assertEquals("Text color error",
+					perform.name.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.rune.getBackground(),
+					new Color(125, 0, 0));
+			assertEquals("Text color error",
+					perform.rune.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error", 
 					perform.output.getBackground(),
@@ -122,6 +138,18 @@ public class HomeGUITest {
 			assertEquals("Text color error", 
 					perform.numbers.getForeground(),
 					Color.WHITE);
+			assertEquals("Red color error",
+					perform.name.getBackground(),
+					new Color(0, 125, 0));
+			assertEquals("Text color error",
+					perform.name.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.rune.getBackground(),
+					new Color(0, 125, 0));
+			assertEquals("Text color error",
+					perform.rune.getForeground(),
+					Color.WHITE);
 			assertEquals("Red color error", 
 					perform.output.getBackground(),
 					new Color(0, 125, 0));
@@ -166,6 +194,18 @@ public class HomeGUITest {
 					new Color(0, 0, 125));
 			assertEquals("Text color error", 
 					perform.numbers.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.name.getBackground(),
+					new Color(0, 0, 125));
+			assertEquals("Text color error",
+					perform.name.getForeground(),
+					Color.WHITE);
+			assertEquals("Red color error",
+					perform.rune.getBackground(),
+					new Color(0, 0, 125));
+			assertEquals("Text color error",
+					perform.rune.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error", 
 					perform.output.getBackground(),
