@@ -20,48 +20,48 @@ import javax.swing.JPanel;
  */
 public class DiceGUI extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
-	
+
 	/** A Dice object. */
 	Dice newDie = new Dice();
 	/** An int holding the face number of one die. */
-	private int die0 = 1; 
+	private int die0 = 1;
 	/** An int holding the face number of one die. */
-	private int die1 = 6; 
+	private int die1 = 6;
 	/** A JFrame for the Dice module. */
-	JFrame dieFrame = new JFrame("Dice"); 
-	
+	JFrame dieFrame = new JFrame("Dice");
+
 	/** A JPanel for the Dice module. Uses <code>GridBagLayout</code>. */
 	JPanel diePane = new JPanel(new GridBagLayout());
-	
+
 	/** An ImageIcon for a die, holds the specified die's face
 	 *  number image. */
-	ImageIcon die0Image = new ImageIcon(getClass().getResource(die0 
+	ImageIcon die0Image = new ImageIcon(getClass().getResource(die0
 			+ ".png"));
 	/** Places the die's ImageIcon in a JLabel for simpler display. */
 	JLabel image0Label = new JLabel(die0Image);
-	
-	/** An ImageIcon for a die, holds the specified die's 
+
+	/** An ImageIcon for a die, holds the specified die's
 	 * face number image. */
 	ImageIcon die1Image = new ImageIcon(getClass().getResource(die1
 			+ ".png"));
 	/** Places the die's ImageIcon in a JLabel for simpler display. */
 	JLabel image1Label = new JLabel(die1Image);
-	
+
 	/** A URL to hold the mobile image shown upon getting snake eyes. */
 	URL fire = getClass().getResource("fireworks.gif");
-	/** An ImageIcon to hold the mobile image shown upon  getting 
+	/** An ImageIcon to hold the mobile image shown upon  getting
 	 * snake eyes. */
 	Icon fireIcon = new ImageIcon(fire);
 	/** Places the mobile image in a JLabel for simpler display. */
 	JLabel fireLabel = new JLabel(fireIcon);
-	
+
 	/** The button for the user to roll both dice. */
 	JButton rollButton = new JButton("Roll");
-	
+
 	/** The reward message given to a user who rolls two ones. */
 	TextField output = new TextField("Snake Eyes!");
-	
-	/** An executable form for the Dice module of the Digital Fortune 
+
+	/** An executable form for the Dice module of the Digital Fortune
 	 * Teller. */
 	public DiceGUI() {
 		GridBagConstraints constraints = new GridBagConstraints();
@@ -71,7 +71,7 @@ public class DiceGUI extends JFrame implements ActionListener {
 		constraints.weighty = 0.5;
 		constraints.anchor = GridBagConstraints.PAGE_START;
 		diePane.add(image0Label,  constraints);
-		
+
 		GridBagConstraints constraints0 = new GridBagConstraints();
 		constraints0.gridx = 1;
 		constraints0.gridy = 0;
@@ -79,7 +79,7 @@ public class DiceGUI extends JFrame implements ActionListener {
 		constraints.weighty = 0.5;
 		diePane.add(fireLabel, constraints0);
 		fireLabel.setVisible(false);
-		
+
 		GridBagConstraints constraints1 = new GridBagConstraints();
 		constraints1.gridx = 2;
 		constraints1.gridy = 0;
@@ -87,7 +87,7 @@ public class DiceGUI extends JFrame implements ActionListener {
 		constraints1.weighty = 0.5;
 		constraints1.anchor = GridBagConstraints.PAGE_START;
 		diePane.add(image1Label,  constraints1);
-		
+
 		GridBagConstraints constraints2 = new GridBagConstraints();
 		constraints2.gridx = 1;
 		constraints2.gridy = 1;
@@ -97,7 +97,7 @@ public class DiceGUI extends JFrame implements ActionListener {
 		diePane.add(rollButton, constraints2);
 		rollButton.addActionListener(this);
 		rollButton.setEnabled(true);
-		
+
 		GridBagConstraints constraints3 = new GridBagConstraints();
 		constraints3.gridx = 1;
 		constraints3.gridy = 2;
@@ -108,30 +108,30 @@ public class DiceGUI extends JFrame implements ActionListener {
 		output.setEditable(false);
 		output.setVisible(false);
 		diePane.add(output, constraints3);
-		
+
 		dieFrame.add(diePane);
 		dieFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		dieFrame.pack();
 		dieFrame.setVisible(true);
 	}
-	
-	/** Returns die0. 
+
+	/** Returns die0.
 	 * @return The die0 private int. */
 	public int getDie0() {
 		return die0;
 	}
-	
+
 	/** Returns die1.
 	 * @return The die1 private int. */
 	public int getDie1() {
 		return die1;
 	}
-	
-	/** Checks to see what button was pressed. 
+
+	/** Checks to see what button was pressed.
 	 * @param event The event fired by the user. */
 	public void actionPerformed(final ActionEvent event) {
 		JButton buttonPressed = (JButton) event.getSource();
-		
+
         if (buttonPressed == rollButton) {
         	if (output.isVisible()) {
         		output.setVisible(false);
@@ -146,7 +146,7 @@ public class DiceGUI extends JFrame implements ActionListener {
         	die1Image = new ImageIcon(getClass().
         			getResource(die1 + ".png"));
         	image1Label.setIcon(die1Image);
-        	
+
         	if (die0 == 1 && die1 == 1) {
         		output.setVisible(true);
         		fireLabel.setVisible(true);

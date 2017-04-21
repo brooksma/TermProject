@@ -25,7 +25,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	JFrame eightBallFrame = new JFrame("Magic Eight Ball");
 	/** A JPanel object for the module. */
 	JPanel eightBallPane = new JPanel(new GridBagLayout());
-	
+
 	/** The image of an eight ball. */
 	ImageIcon eightBallImage = new ImageIcon(getClass().
 			getResource("eight_ball.jpg"));
@@ -36,24 +36,24 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	JLabel imageLabel = new JLabel(eightBallImage);
 	/** The image of a shaken eight ball as a JLabel. */
 	JLabel imageLabel2 = new JLabel(eightBallImage2);
-	
+
 	/** The button for the user to shake the eight ball. */
 	JButton shakeButton = new JButton("Shake");
 	/** The button for the user to try the same question again. */
 	JButton retryButton = new JButton("Try Again");
-	
+
 	/** A TextField to output results and information to the user. */
 	TextField output = new TextField("Please ask a yes or no question.");
 	/** A TextField for the user to input a query. */
 	TextField input = new TextField();
-	
+
 	/**
 	 * Sets up a Graphics User Interface for the basic Eight Ball module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
 	 */
 	public EightBallGUI() {
 		eightBallPane.setBackground(Color.WHITE);
-		
+
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.gridx = 1;
 		constraints.gridy = 0;
@@ -61,11 +61,11 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		constraints.weightx = 0.5;
 		constraints.fill = GridBagConstraints.BOTH;
 		constraints.anchor = GridBagConstraints.PAGE_START;
-		eightBallPane.add(imageLabel, constraints);	
-		
+		eightBallPane.add(imageLabel, constraints);
+
 		eightBallPane.add(imageLabel2, constraints);
 		imageLabel2.setVisible(false);
-		
+
 		GridBagConstraints constraints1 = new GridBagConstraints();
 		constraints1.gridx = 1;
 		constraints1.gridy = 1;
@@ -76,7 +76,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		eightBallPane.add(shakeButton, constraints1);
 		shakeButton.addActionListener(this);
 		shakeButton.setEnabled(true);
-		
+
 		GridBagConstraints constraints2 = new GridBagConstraints();
 		constraints2.gridx = 1;
 		constraints2.gridy = 4;
@@ -87,7 +87,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		eightBallPane.add(retryButton, constraints2);
 		retryButton.addActionListener(this);
 		retryButton.setEnabled(false);
-		
+
 		GridBagConstraints constraints3 = new GridBagConstraints();
 		constraints3.gridx = 1;
 		constraints3.gridy = 2;
@@ -97,7 +97,7 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		constraints3.anchor = GridBagConstraints.CENTER;
 		eightBallPane.add(output, constraints3);
 		output.setEditable(false);
-		
+
 		GridBagConstraints constraints4 = new GridBagConstraints();
 		constraints4.gridx = 1;
 		constraints4.gridy = 3;
@@ -107,14 +107,14 @@ public class EightBallGUI extends JFrame implements ActionListener {
 		constraints4.anchor = GridBagConstraints.PAGE_END;
 		eightBallPane.add(input, constraints4);
 		input.setEditable(true);
-		
+
 		eightBallFrame.add(eightBallPane);
 		eightBallFrame.setDefaultCloseOperation(
 				JFrame.DISPOSE_ON_CLOSE);
         eightBallFrame.pack();
         eightBallFrame.setVisible(true);
 	}
-	
+
 	/**
 	 * Finds if an action was performed and then alters the GUI accordingly.
 	 * @param event the Action performed
@@ -122,8 +122,8 @@ public class EightBallGUI extends JFrame implements ActionListener {
 	public void actionPerformed(final ActionEvent event) {
         JButton buttonPressed = (JButton) event.getSource();
         if (buttonPressed == shakeButton) {
-        	output.setText("'" + input.getText() + "'" 
-        			+ " " + globalBall.shakeBall());		
+        	output.setText("'" + input.getText() + "'"
+        			+ " " + globalBall.shakeBall());
         	imageLabel.setVisible(false);
         	imageLabel2.setVisible(true);
         	retryButton.setEnabled(true);

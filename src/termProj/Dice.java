@@ -12,7 +12,7 @@ public class Dice {
 	private int die;
 	/** A private object from the Random class to generate the die's
 	 * face number. */
-	private static Random number;
+	private Random number;
 	/** A count of how often a user gets a lucky result. */
 	public int luckyCounter;
 	/**
@@ -24,14 +24,14 @@ public class Dice {
 		number = new Random();
 		die = 1;
 	}
-	
-	/** Returns the die. 
+
+	/** Returns the die.
 	 * @return The die. */
 	public int getDie() {
 		return die;
 	}
-	
-	/** Returns the luckyCounter. 
+
+	/** Returns the luckyCounter.
 	 * @return The luckyCounter. */
 	public int getLuck() {
 		return luckyCounter;
@@ -52,7 +52,7 @@ public class Dice {
 		}
 		return die0.die;
 	}
-	
+
 	/**
 	 * Non-static version of rolling, if needed.<p>
 	 * Sets an instance of <code>Dice</code>'s <code>die</code> field

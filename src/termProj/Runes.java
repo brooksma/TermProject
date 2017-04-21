@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package termProj;
 
@@ -7,171 +7,171 @@ package termProj;
 /** A backbone code class for the Rune Generator.
  * @author Natasha Speck */
 public class Runes {
-	
+
 	//Fields
 	/**The first rune. */
 	private final Rune mannaz = new Rune("Mannaz", 7, true);
 	/** A set of keywords for mannaz. */
-	private final String[] mkeys = {"i", "me", "myself", "self", 
+	private final String[] mkeys = {"i", "me", "myself", "self",
 			"personal", "personally", "people"};
-	
+
 	/**The second rune. */
 	private final Rune gebo = new Rune("Gebo", 11, true);
 	/** A set of keywords for gebo. */
 	private final String[] gkeys = {"boyfriend", "girlfriend",
-			"partner", "coworker", "friend", "Christmas", 
+			"partner", "coworker", "friend", "Christmas",
 			"holiday", "gift", "present", "spouse", "birthday"};
-	
+
 	/**The third rune. */
 	private final Rune anguz = new Rune("Anguz", 10, true);
 	/** A set of keywords for anguz. */
-	private final String[] akeys = {"say", "said", "crazy", 
-			"stupid", "wild", "divine", "feel", "holy", 
+	private final String[] akeys = {"say", "said", "crazy",
+			"stupid", "wild", "divine", "feel", "holy",
 			"inspired", "weird"};
-	
+
 	/**The fourth rune. */
 	private final Rune dhagaz = new Rune("Dhagaz", 6, false);
 	/** A set of keywords for dhagaz. */
 	private final String[] dhkeys = {"stuff", "house", "home",
 			"return", "run", "things"};
-	
+
 	/**The fifth rune. */
 	private final Rune uruz = new Rune("Uruz", 6, false);
 	/** A set of keywords for uruz. */
-	private final String[] ukeys = {"weak", "problem", 
+	private final String[] ukeys = {"weak", "problem",
 			"worried", "anxious", "give", "more"};
-	
+
 	/**The sixth rune. */
 	private final Rune perth = new Rune("Perth", 4, false);
 	/** A set of keywords for perth. */
 	private final String[] pkeys = {"new", "cheating", "know",
 			"looking"};
-	
+
 	/**The seventh rune. */
 	private final Rune nauthiz = new Rune("Nauthiz", 3, false);
 	/** A set of keywords for nauthiz. */
 	private final String[] nkeys = {"need", "want", "excited"};
-	
+
 	/**The eighth rune. */
 	private final Rune ing = new Rune("Ing", 6, true);
 	/** A set of keywords for ing. */
-	private final String[] ikeys = {"rough", "kid", 
+	private final String[] ikeys = {"rough", "kid",
 			"child", "pregnant", "sex", "unprotected"};
-	
+
 	/**The ninth rune. */
 	private final Rune eihwaz = new Rune("Eihwaz", 6, false);
 	/** A set of keywords for eihwaz. */
 	private final String[] eikeys = {"bored", "boring", "protect",
 			"defend", "lonely", "attack"};
-	
+
 	/**The tenth rune. */
 	private final Rune algiz = new Rune("Algiz", 6, false);
 	/** A set of keywords for algiz. */
 	private final String[] alkeys = {"safe", "unsafe", "scared",
 			"afraid", "following", "unknown"};
-	
+
 	/**The eleventh rune. */
 	private final Rune fehu = new Rune("Fehu", 7, true);
 	/** A set of keywords for fehu. */
 	private final String[] fkeys = {"friends", "own", "have",
 			"desire", "money", "funds", "bank"};
-	
+
 	/**The twelfth rune. */
 	private final Rune wunjo = new Rune("Wunjo", 6, true);
 	/** A set of keywords for wunjo. */
-	private final String[] wkeys = {"curious", "wonder", 
+	private final String[] wkeys = {"curious", "wonder",
 			"sad", "depressed", "depression", "suicide"};
-	
+
 	/**The thirteenth rune. */
 	private final Rune jera = new Rune("Jera", 9, true);
 	/** A set of keywords for jera. */
-	private final String[] jkeys = {"job", "tax", 
+	private final String[] jkeys = {"job", "tax",
 			"government", "taxes", "jobs", "future", "year",
 			"farm", "farming"};
-	
+
 	/**The fourteenth rune. */
 	private final Rune kano = new Rune("Kano", 8, true);
 	/** A set of keywords for kano. */
-	private final String[] kkeys = {"stomach", "boat", 
+	private final String[] kkeys = {"stomach", "boat",
 			"boating", "fishing", "dark", "closed", "open",
 			"door"};
-	
+
 	/**The fifteenth rune. */
 	private final Rune teiwaz = new Rune("Teiwaz", 7, true);
 	/** A set of keywords for teiwaz. */
 	private final String[] tkeys = {"lost", "losing", "sports",
 			"fighting", "illness", "confused", "cancer"};
-	
+
 	/**The sixteenth rune. */
 	private final Rune berkana = new Rune("Berkana", 6, false);
 	/** A set of keywords for berkana. */
-	private final String[] bkeys = {"pregnant", "motivation", 
+	private final String[] bkeys = {"pregnant", "motivation",
 			"religion", "old", "new", "pain"};
-	
+
 	/**The seventeenth rune. */
 	private final Rune ehwaz = new Rune("Ehwaz", 8, true);
 	/** A set of keywords for ehwaz. */
 	private final String[] ehkeys = {"move", "moving", "house",
 			"pet", "horse", "day", "night", "dark"};
-	
+
 	/**The eighteenth rune. */
 	private final Rune laguz = new Rune("Laguz", 6, true);
 	/** A set of keywords for laguz. */
 	private final String[] lkeys = {"cruise", "flow", "crying",
 			"salty", "water", "unsure"};
-	
+
 	/**The nineteenth rune. */
 	private final Rune haegl = new Rune("Haegl", 15, false);
 	/** A set of keywords for haegl. */
 	private final String[] hkeys = {"weather", "daily", "life",
-			"uneasy", "snow", "hailed", "sleet", "tornado", 
+			"uneasy", "snow", "hailed", "sleet", "tornado",
 			"Trump"};
-	
+
 	/**The twentieth rune. */
 	private final Rune raido = new Rune("Raido", 11, true);
 	/** A set of keywords for raido. */
 	private final String[] rkeys = {"go", "going", "vacation",
 			"paranormal", "supernatural", "ghost", "poterlogist"};
-	
+
 	/**The twenty-first rune. */
 	private final Rune thurisaz = new Rune("Thurisaz", 9, false);
 	/** A set of keywords for thurisaz. */
 	private final String[] thkeys = {"inconvenient", "hell", "pain",
 			"annoying", "gate", "wall", "fence", "big", "huge"};
-	
+
 	/**The twenty-second rune. */
 	private final Rune othila = new Rune("Othila", 11, true);
 	/** A set of keywords for othila. */
 	private final String[] okeys = {"day", "struggling", "dark",
 			"thoughts", "work", "working", "tough", "hard",
 			"project", "homework", "paper"};
-	
+
 	/**The twenty-third rune. */
 	private final Rune isa = new Rune("Isa", 7, false);
 	/** A set of keywords for isa. */
 	private final String[] iskeys = {"ice", "icey", "standoff",
 			"not", "argument", "arguing", "listening"};
-	
+
 	/**The twenty-fourth rune. */
 	private final Rune sowelu = new Rune("Sowelu", 8, true);
 	/** A set of keywords for sowelu. */
-	private final String[] skeys = {"illness", "mental", "arm", 
+	private final String[] skeys = {"illness", "mental", "arm",
 			"leg", "missing", "head", "hole", "heart"};
-	
+
 	/**The twenty-fifth rune. */
 	private final Rune unknowable = new Rune("The Unknowable", 1, true);
 	/** A set of keywords for the unknowable. */
 	private final String[] unkeys = {"destiny"};
-	
+
 	/** A compiled array of all of the runes. */
 	private final Rune[] runes = {mannaz, gebo, anguz, dhagaz, uruz,
 			perth, nauthiz, ing, eihwaz, algiz, fehu, wunjo, jera,
 			kano, teiwaz, berkana, ehwaz, laguz, haegl, raido,
 			thurisaz, othila, isa, sowelu, unknowable};
-	
+
 	/** A luck counter for the overall project. */
 	private int luckCounter = 0;
-	
+
 	//Methods
 	/** Constructor. */
 	public Runes() {
@@ -251,19 +251,19 @@ public class Runes {
 				+ " you hold the reigns.");
 		unknowable.setKeys(unkeys);
 		}
-	
-	/** Accesses the luck counter. 
+
+	/** Accesses the luck counter.
 	 * @return the luck counter. */
 	public int getLuck() {
 		return luckCounter;
 	}
-	
+
 	/** Accesses the list of runes, for testing purposes.
 	 * @return the list of <code>Rune</code> objects. */
 	public Rune[] getRuneArray() {
 		return runes;
 	}
-	
+
 	/** Updates the luck counter according to the chosen rune.
 	 * @param rune the selected rune to change the luck counter. */
 	private void updateLuck(final Rune rune) {
@@ -273,7 +273,7 @@ public class Runes {
 			luckCounter--;
 		}
 	}
-	
+
 	/** The backbone of a String search and connection method.
 	 *  It goes through a query <code>String</code> to connect
 	 *  the query's key words to the <code>Rune</code> keywords
@@ -284,7 +284,7 @@ public class Runes {
 	public Rune seekGuidance(final String query) {
 		Rune highest = new Rune();
 		highest = unknowable;
-		if (!query.equals(null)) {
+		if (query != null)) {
 			String query1 = query.toLowerCase();
 			String[] queryWords = query1.split("[\\s?.!,]");
 			if (queryWords.length <= 10) {

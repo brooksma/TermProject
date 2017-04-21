@@ -10,7 +10,7 @@ import org.junit.Test;
 
 /** A testing suite for the GUI and backbone of a FortCookie. */
 public class FortCookieTests {
-	
+
 	/** Tests the constructor for the backbone of a FortCookie. */
 	@Test
 	public final void testFortCookie() {
@@ -39,7 +39,7 @@ public class FortCookieTests {
 		assertNotEquals("Counter was not changed.", broke2.getLuck(),
 				0);
 	}
-	
+
 	/** Tests the FortCookieGUI.*/
 	@Test
 	public final void testPerformed() {
@@ -50,7 +50,7 @@ public class FortCookieTests {
 		assertTrue(perform.imageLabel2.isVisible());
 		assertFalse(perform.breakButton.isEnabled());
 		assertTrue(perform.againButton.isEnabled());
-		
+
 		perform.againButton.doClick();
 		assertFalse(perform.imageLabel2.isVisible());
 		assertTrue(perform.imageLabel.isVisible());

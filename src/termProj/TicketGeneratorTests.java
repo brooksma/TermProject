@@ -21,7 +21,7 @@ public class TicketGeneratorTests {
 		String testor = test.luckyShot();
 		System.out.println("LuckyShot: " + testor);
 		assertNotNull("LuckyShot did not work.", testor);
-		assertEquals("LuckyShot set the wrong # of digits.", 
+		assertEquals("LuckyShot set the wrong # of digits.",
 				testor.length(), 2);
 	}
 
@@ -32,7 +32,7 @@ public class TicketGeneratorTests {
 		String testor = test.pickThree();
 		System.out.println("PickThree: " + testor);
 		assertNotNull("PickThree did not work.", testor);
-		assertEquals("PickThree set the wrong # of digits.", 
+		assertEquals("PickThree set the wrong # of digits.",
 				testor.length(), 3);
 	}
 
@@ -43,7 +43,7 @@ public class TicketGeneratorTests {
 		String testor = test.sixPair();
 		System.out.println("SixPair: " + testor);
 		assertNotNull("SixPair did not work.", testor);
-		assertEquals("SixPair set the wrong # of digits.", 
+		assertEquals("SixPair set the wrong # of digits.",
 				12, testor.length());
 	}
 
@@ -54,7 +54,7 @@ public class TicketGeneratorTests {
 		String testor = test.sevenPair();
 		System.out.println("SevenPair: " + testor);
 		assertNotNull("SevenPair did not work.", testor);
-		assertEquals("SevenPair set the wrong # of digits.", 
+		assertEquals("SevenPair set the wrong # of digits.",
 				testor.length(), 14);
 	}
 
@@ -66,7 +66,7 @@ public class TicketGeneratorTests {
 				test.generate(5));
 		String testor = test.generate(7);
 		System.out.println("Generate: " + testor);
-		assertEquals("Generated size incorrectly.", 
+		assertEquals("Generated size incorrectly.",
 				testor.length(), 7);
 	}
 
@@ -74,27 +74,27 @@ public class TicketGeneratorTests {
 	@Test
 	public final void testGeneratePairs() {
 		TicketGenerator test = new TicketGenerator();
-		assertNotNull("Exception thrown incorrectly.", 
+		assertNotNull("Exception thrown incorrectly.",
 				test.generatePairs(5));
 		String testor = test.generatePairs(7);
 		System.out.println("GeneratePairs: " + testor);
-		assertEquals("Generated size incorrectly.", 
+		assertEquals("Generated size incorrectly.",
 				testor.length(), 14);
 	}
-	
+
 	/** Tests the TicketGenerator module's GUI. */
 	@Test
 	public final void testPerformed() {
 		TicketGeneratorGUI perform = new TicketGeneratorGUI();
 		perform.twoButton.doClick();
 		assertNotNull("Text field was not set.", perform.output);
-		
+
 		perform.threeButton.doClick();
 		assertNotNull("Text field was not set.", perform.output);
-		
+
 		perform.sixButton.doClick();
 		assertNotNull("Text field was not set.", perform.output);
-		
+
 		perform.sevenButton.doClick();
 		assertNotNull("Text field was not set.", perform.output);
 	}

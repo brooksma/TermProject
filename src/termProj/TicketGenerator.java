@@ -11,7 +11,7 @@ import java.util.Random;
 public class TicketGenerator {
 	/** A Random object to select numbers. */
 	private Random generator;
-	
+
 	/**
 	 * Constructor for a <code>TicketGenerator</code> object.
 	 * Initializes a new <code>Random</code> object.
@@ -19,14 +19,14 @@ public class TicketGenerator {
 	public TicketGenerator() {
 		generator = new Random();
 	}
-	
+
 	/** Returns the Random object.
 	 * @return The Random object.
 	 */
 	public Random getGenerator() {
 		return generator;
 	}
-	
+
 	/**
 	 * Generates a two-digit pseudorandom number.
 	 * @return the two-digit number as a <code>String</code>
@@ -35,29 +35,29 @@ public class TicketGenerator {
 		String two = "" + generator.nextInt(10) + generator.nextInt(10);
 		return two;
 	}
-	
+
 	/**
 	 * Generates a three-digit pseudorandom number.
 	 * @return the three-digit number as a <code>String</code>
 	 */
 	public String pickThree() {
-		String three = "" + generator.nextInt(10) 
-			+ generator.nextInt(10) 
+		String three = "" + generator.nextInt(10)
+			+ generator.nextInt(10)
 			+ generator.nextInt(10);
 		return three;
 	}
-	
+
 	/**
 	 * Generates a twelve-digit pseudorandom number.
 	 * @return the twelve-digit number as a <code>String</code>
 	 */
 	public String sixPair() {
 		TicketGenerator tckt = new TicketGenerator();
-		String six = tckt.pickThree() + tckt.pickThree() 
+		String six = tckt.pickThree() + tckt.pickThree()
 			+ tckt.pickThree() + tckt.pickThree();
 		return six;
 	}
-	
+
 	/**
 	 * Generates a fourteen-digit pseudorandom number.
 	 * @return the fourteen-digit number as a <code>String</code>
@@ -70,14 +70,14 @@ public class TicketGenerator {
 		seven = firstSix + lastTwo;
 		return seven;
 	}
-	
+
 	/**
 	 * Generates a user-specified number of digits in a pseudorandom number.
 	 * @param numDigits the user's desired number of digits as an integer
 	 * @return the user-specified number as a <code>String</code>
 	 * @throws IllegalArgumentException if entry is less than zero
 	 */
-	public String generate(final int numDigits) 
+	public String generate(final int numDigits)
 			throws IllegalArgumentException {
 		String fullNum = "";
 		if (numDigits < 0 || numDigits >= 50) {
@@ -91,13 +91,13 @@ public class TicketGenerator {
 		}
 		return fullNum;
 	}
-	
+
 	/**
-	 * Generates a user-specified number of pairs of digits in a 
-	 * pseudorandom number. <p> Throws an 
-	 * <code>IllegalArgumentException</code> 
+	 * Generates a user-specified number of pairs of digits in a
+	 * pseudorandom number. <p> Throws an
+	 * <code>IllegalArgumentException</code>
 	 * if entry is less than zero.
-	 * @param numPairs the user's desired number of pairs of digits as 
+	 * @param numPairs the user's desired number of pairs of digits as
 	 * an integer
 	 * @return the user-specified number as a <code>String</code>
 	 * @throws IllegalArgumentException if entry is less than zero

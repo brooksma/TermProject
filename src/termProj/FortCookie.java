@@ -15,23 +15,23 @@ public class FortCookie {
 	private FortCookie fortune;
 	/** An array of possible results which will increment
 	 *  the luckyCounter. */
-	private final String[] lucky = {"A dream you have will come true.", 
-			"The one you desire feels the same.", 
+	private final String[] lucky = {"A dream you have will come true.",
+			"The one you desire feels the same.",
 			"Wealth awaits you very soon.",
-			"Now is the time to try something new.", 
+			"Now is the time to try something new.",
 			"You will live long and enjoy life." };
-	/** An array of possible results which will decrement the 
+	/** An array of possible results which will decrement the
 	 * luckyCounter. */
-	private final String[] unlucky = {"Today is a disastrous day.", 
-			"It's over your head. Time for help.", 
+	private final String[] unlucky = {"Today is a disastrous day.",
+			"It's over your head. Time for help.",
 			"Your life's forecast is cloudy.",
-			"You are being stretched too thin.", 
+			"You are being stretched too thin.",
 			"Stormy seas ahead in relationships." };
 	/** A Random object to select a result. */
 	private Random randomNumber;
 	/** A count of how often a user gets a lucky result. */
 	private int luckyCounter;
-	
+
 	/** Constructs a FortCookie object with a null fortune, a Random,
 	 *  and a 0 luckyCounter. */
 	public FortCookie() {
@@ -39,13 +39,13 @@ public class FortCookie {
 		this.randomNumber = new Random();
 		this.luckyCounter = 0;
 	}
-	
+
 	/** Returns the FortCookie object.
 	 * @return The FortCookie object.*/
 	public FortCookie getFortune() {
 		return fortune;
 	}
-	
+
 	/** Returns the luck counter.
 	 * @return The luck counter int. */
 	public int getLuck() {
@@ -57,10 +57,10 @@ public class FortCookie {
 	 *Depending on phrase, luckyCounter is incremented or decremented.
 	 *@return a randomly selected result from the lucky or unlucky lists
 	 **/
-	public String breakCookie() {	
+	public String breakCookie() {
 		int luck = randomNumber.nextInt(2);
 		String phrase;
-		
+
 		if (luck == 0) {
 			phrase = lucky[randomNumber.nextInt(4)];
 			luckyCounter += 1;
@@ -70,7 +70,7 @@ public class FortCookie {
 		}
 		return phrase;
 	}
-	
+
 	/**
 	 * Breaks a given FortCookie using the breakCookie() method.
 	 * @param broke The FortCookie to be broken.

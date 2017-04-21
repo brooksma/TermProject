@@ -13,7 +13,7 @@ public class NameMatchMakerGUITests {
 	public final void testPerformed() {
 		NameMatchMakerGUI perform = new NameMatchMakerGUI();
 		perform.matchButton.doClick();
-		
+
 		assertNotNull("Text field was not set.", perform.output1);
 	}
 }

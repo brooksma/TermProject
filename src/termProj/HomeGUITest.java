@@ -14,34 +14,38 @@ public class HomeGUITest {
 	@Test
 	public void testPerformed() {
 		HomeGUI perform = new HomeGUI();
-		
+
 		perform.ball.doClick();
 		assertNotNull("EightBallGUI error", perform.newBall);
- 
+
 		perform.dice.doClick();
 		assertNotNull("DiceGUI error", perform.newDice);
-		
+
 		perform.fortune.doClick();
 		assertNotNull("FortCookieGUI error", perform.newCookie);
-		
+
 		perform.numbers.doClick();
 		assertNotNull("TicketGeneratorGUI error", perform.newLotto);
-		
+
 		perform.name.doClick();
 		assertNotNull("Name error", perform.name);
-		
+
 		perform.rune.doClick();
 		assertNotNull("Rune error", perform.rune);
-		
+
 		perform.luck.doClick();
-		assertEquals(perform.getLuck(), perform.newBall.globalBall.getLuck() + perform.newDice.newDie.getLuck() +
-				perform.newCookie.global.getLuck() + perform.newName.getLuck() + perform.newRune.runes.getLuck());
+		assertEquals(perform.getLuck(),
+				perform.newBall.globalBall.getLuck()
+				+ perform.newDice.newDie.getLuck()
+				+ perform.newCookie.global.getLuck()
+				+ perform.newName.getLuck()
+				+ perform.newRune.runes.getLuck());
 		assertNotNull("Output error", perform.output);
 	}
-	
+
 	/** Tests the personalization options. */
 	@Test
-	public void testPerformedColors() {
+	public void testPerformedColors1() {
 		HomeGUI perform = new HomeGUI();
 		perform.color.doClick();
 		if (perform.colour == perform.options[0].toString()) {
@@ -60,25 +64,25 @@ public class HomeGUITest {
 			assertEquals("Red color error",
 					perform.dice.getBackground(),
 					new Color(125, 0, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.dice.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.ball.getBackground(),
 					new Color(125, 0, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.ball.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.fortune.getBackground(),
 					new Color(125, 0, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.fortune.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.numbers.getBackground(),
 					new Color(125, 0, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.numbers.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error",
@@ -93,20 +97,26 @@ public class HomeGUITest {
 			assertEquals("Text color error",
 					perform.rune.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.output.getBackground(),
 					new Color(125, 0, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.output.getForeground(),
 					Color.WHITE);
 		}
-		
+	}
+
+	/** Tests the personalization options. */
+	@Test
+	public void testPerformedColors2() {
+		HomeGUI perform = new HomeGUI();
 		perform.color.doClick();
-		if (perform.colour == perform.options[1].toString()) {
-			assertEquals("Red color error", 
+
+		if (perform.colour.equals(perform.options[1].toString())) {
+			assertEquals("Red color error",
 					perform.color.getBackground(),
 					new Color(0, 125, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.color.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error",
@@ -115,28 +125,28 @@ public class HomeGUITest {
 			assertEquals("Text color error",
 					perform.luck.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.dice.getBackground(),
 					new Color(0, 125, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.dice.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.ball.getBackground(),
 					new Color(0, 125, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.ball.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.fortune.getBackground(),
 					new Color(0, 125, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.fortune.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.numbers.getBackground(),
 					new Color(0, 125, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.numbers.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error",
@@ -151,20 +161,26 @@ public class HomeGUITest {
 			assertEquals("Text color error",
 					perform.rune.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.output.getBackground(),
 					new Color(0, 125, 0));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.output.getForeground(),
 					Color.WHITE);
 		}
-		
+	}
+
+	/** Tests the personalization options. */
+	@Test
+	public void testPerformedColors3() {
+		HomeGUI perform = new HomeGUI();
 		perform.color.doClick();
-		if (perform.colour == perform.options[2].toString()) {
-			assertEquals("Red color error", 
+
+		if (perform.colour.equals(perform.options[2].toString())) {
+			assertEquals("Red color error",
 					perform.color.getBackground(),
 					new Color(0, 0, 125));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.color.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error",
@@ -173,28 +189,28 @@ public class HomeGUITest {
 			assertEquals("Text color error",
 					perform.luck.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.dice.getBackground(),
 					new Color(0, 0, 125));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.dice.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.ball.getBackground(),
 					new Color(0, 0, 125));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.ball.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.fortune.getBackground(),
 					new Color(0, 0, 125));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.fortune.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.numbers.getBackground(),
 					new Color(0, 0, 125));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.numbers.getForeground(),
 					Color.WHITE);
 			assertEquals("Red color error",
@@ -209,12 +225,12 @@ public class HomeGUITest {
 			assertEquals("Text color error",
 					perform.rune.getForeground(),
 					Color.WHITE);
-			assertEquals("Red color error", 
+			assertEquals("Red color error",
 					perform.output.getBackground(),
 					new Color(0, 0, 125));
-			assertEquals("Text color error", 
+			assertEquals("Text color error",
 					perform.output.getForeground(),
 					Color.WHITE);
 		}
-	}		
+	}
 }

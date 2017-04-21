@@ -18,7 +18,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	JFrame tcktFrame = new JFrame("Lottery Ticket Number Generator");
 	/** A JFrame to house a TicketGenerator module's components. */
 	JPanel tcktPane = new JPanel(new GridBagLayout());
-	
+
 	/** A button for the user to generate a Lucky Shot. */
 	JButton twoButton = new JButton("Lucky Shot");
 	/** A button for the user to generate a Pick Three. */
@@ -31,10 +31,10 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 	JButton genButton = new JButton("Generate Number");
 	/** A button for the user to generate their own pairs, RELEASE 02. */
 	JButton gen2Button = new JButton("Generate Pairs");
-	
+
 	/** A TextField for the module to interact with the user. */
 	TextField output = new TextField("Please select an option.");
-	
+
 	/**
 	 * Sets up a Graphics User Interface for the basic Eight Ball module.
 	 *<p> Uses the <code>GridBagLayout</code> form from the Java API.
@@ -46,7 +46,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		constraints.fill = GridBagConstraints.HORIZONTAL;
 		tcktPane.add(output, constraints);
 		output.setEditable(false);
-		
+
 		GridBagConstraints constraints1 = new GridBagConstraints();
 		constraints1.weighty = 0.5;
 		constraints1.weightx = 0.5;
@@ -54,7 +54,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		constraints1.gridx = 0;
 		tcktPane.add(twoButton, constraints1);
 		twoButton.addActionListener(this);
-		
+
 		GridBagConstraints constraints2 = new GridBagConstraints();
 		constraints2.weighty = 0.5;
 		constraints2.weightx = 0.5;
@@ -62,7 +62,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		constraints2.gridx = 1;
 		tcktPane.add(threeButton, constraints2);
 		threeButton.addActionListener(this);
-		
+
 		GridBagConstraints constraints3 = new GridBagConstraints();
 		constraints3.weighty = 0.5;
 		constraints3.weightx = 0.5;
@@ -70,7 +70,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		constraints3.gridx = 2;
 		tcktPane.add(sixButton, constraints3);
 		sixButton.addActionListener(this);
-		
+
 		GridBagConstraints constraints5 = new GridBagConstraints();
 		constraints5.weighty = 0.5;
 		constraints5.weightx = 0.5;
@@ -78,7 +78,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		constraints5.gridx = 0;
 		tcktPane.add(sevenButton, constraints5);
 		sevenButton.addActionListener(this);
-		
+
 		GridBagConstraints constraints6 = new GridBagConstraints();
 		constraints6.weighty = 0.5;
 		constraints6.weightx = 0.5;
@@ -87,7 +87,7 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		tcktPane.add(genButton, constraints6);
 		genButton.addActionListener(this);
 		genButton.setEnabled(false);
-		
+
 		GridBagConstraints constraints7 = new GridBagConstraints();
 		constraints7.weighty = 0.5;
 		constraints7.weightx = 0.5;
@@ -96,14 +96,14 @@ public class TicketGeneratorGUI extends JFrame implements ActionListener {
 		tcktPane.add(gen2Button, constraints7);
 		gen2Button.addActionListener(this);
 		gen2Button.setEnabled(false);
-		
+
 		tcktFrame.add(tcktPane);
 		tcktFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         tcktFrame.pack();
         tcktFrame.setVisible(true);
 	}
-	
-	/** Checks to see which button was selected. 
+
+	/** Checks to see which button was selected.
 	 * @param event The button selected by the user. */
 	public void actionPerformed(final ActionEvent event) {
         JButton buttonPressed = (JButton) event.getSource();

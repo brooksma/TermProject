@@ -17,10 +17,10 @@ public class RunesTest {
 		assertNotNull(r);
 		assertEquals(r[0].getName(), "Mannaz");
 		assertEquals(r[0].getKey(0), "i");
-		assertEquals(r[0].getMessage(), 
+		assertEquals(r[0].getMessage(),
 				"Be true to yourself and open to counsel.");
 	}
-	
+
 	/** Test array accessor.*/
 	@Test
 	public final void testGetRunes() {
@@ -30,7 +30,7 @@ public class RunesTest {
 		assertNotNull(r);
 		assertEquals(r[0].getName(), "Mannaz");
 		assertEquals(r[0].getKey(0), "i");
-		assertEquals(r[0].getMessage(), 
+		assertEquals(r[0].getMessage(),
 				"Be true to yourself and open to counsel.");
 	}
 

@@ -19,7 +19,7 @@ public class DiceTests {
 		assertNotNull(constructorTest.getDie());
 		assertEquals(constructorTest.getDie(), 1);
 	}
-	
+
 	/** Testing the fetch luck method. */
 	@Test
 	public final void testGetLuck() {
@@ -37,7 +37,7 @@ public class DiceTests {
 		assertNotEquals(Dice.roll(rollTest), 0);
 		assertNotEquals(Dice.roll(rollTest), 0);
 	}
-	
+
 	/** Testing the backbone code's non-static <code>roll()</code>
 	 * method. */
 	@Test
@@ -48,7 +48,7 @@ public class DiceTests {
 		assertNotEquals(rollTest.roll(), 0);
 		assertNotEquals(rollTest.roll(), 0);
 	}
-	
+
 	/** Testing the DiceGUI. */
 	@Test
 	public final void testPerformed() {

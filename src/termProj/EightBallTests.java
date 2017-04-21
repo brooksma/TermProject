@@ -11,14 +11,14 @@ import org.junit.Test;
 
 /** The testing suite for the backbone and GUI of the EightBall. */
 public class EightBallTests {
-	
+
 	/** Tests the EightBall backbone constructor. */
 	@Test
 	public final void testEightBall() {
 		EightBall constructorTest = new EightBall();
-		assertNull("Constructor did something weird.", 
+		assertNull("Constructor did something weird.",
 				constructorTest.getBall());
-		assertEquals("Luck did something weird.", 
+		assertEquals("Luck did something weird.",
 				constructorTest.getLuck(), 0);
 	}
 
@@ -43,7 +43,7 @@ public class EightBallTests {
 		assertNotEquals("Luck was not set when given parameter.",
 				shaken2.getLuck(), 0);
 	}
-	
+
 	/** Tests the EightBall GUI. */
 	@Test
 	public final void testPerformed() {
