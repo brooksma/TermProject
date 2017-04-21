@@ -284,7 +284,7 @@ public class Runes {
 	public Rune seekGuidance(final String query) {
 		Rune highest = new Rune();
 		highest = unknowable;
-		if (query != null)) {
+		if (query != null) {
 			String query1 = query.toLowerCase();
 			String[] queryWords = query1.split("[\\s?.!,]");
 			if (queryWords.length <= 10) {

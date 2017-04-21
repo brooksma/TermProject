@@ -12,7 +12,7 @@ public class Dice {
 	private int die;
 	/** A private object from the Random class to generate the die's
 	 * face number. */
-	private Random number;
+	private static Random number;
 	/** A count of how often a user gets a lucky result. */
 	public int luckyCounter;
 	/**

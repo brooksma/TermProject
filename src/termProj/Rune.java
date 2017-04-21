@@ -13,7 +13,7 @@ public class Rune {
 	/** The rune's advice.*/
 	private String meaning = "";
 	/** The keywords which trigger the rune.*/
-	private String[] keywords;
+	private static String[] keywords;
 	/** Whether or not the rune is lucky.*/
 	private boolean lucky = false;
 	/** The likelihood of the Rune being the
