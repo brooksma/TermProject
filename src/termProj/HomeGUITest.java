@@ -101,6 +101,7 @@ public class HomeGUITest {
 					Color.WHITE);
 		}
 		
+		perform.color.doClick();
 		if (perform.colour == perform.options[1].toString()) {
 			assertEquals("Red color error", 
 					perform.color.getBackground(),
@@ -158,6 +159,7 @@ public class HomeGUITest {
 					Color.WHITE);
 		}
 		
+		perform.color.doClick();
 		if (perform.colour == perform.options[2].toString()) {
 			assertEquals("Red color error", 
 					perform.color.getBackground(),

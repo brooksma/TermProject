@@ -1,9 +1,6 @@
 package termProj;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
-import java.awt.Color;
 import org.junit.Test;
 
 /**
@@ -11,6 +8,12 @@ import org.junit.Test;
  */
 
 public class NameMatchMakerGUITests {
-
-	//?????
+	/** Tests the MatchMakerGUI.*/
+	@Test
+	public final void testPerformed() {
+		NameMatchMakerGUI perform = new NameMatchMakerGUI();
+		perform.matchButton.doClick();
+		
+		assertNotNull("Text field was not set.", perform.output1);
+	}
 }
